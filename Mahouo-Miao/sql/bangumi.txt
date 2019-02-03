@@ -1,0 +1,8 @@
+"id"	"day"	"name"	"cover"	"url"
+"1"	"1"	"赛马娘"	"201804smn.jpg"	"https://www.bilibili.com/bangumi/media/md77972"
+"2"	"1"	"魔法少女 俺"	"201804mhsja.jpg"	"https://www.bilibili.com/bangumi/media/md78832"
+"3"	"3"	"ALICE or ALICE"	"201804aliceoralice.jpg"	"https://www.bilibili.com/bangumi/media/md77672"
+"4"	"4"	"Comic Girls"	"201804comicgirls.jpg"	"https://www.bilibili.com/bangumi/media/md77812"
+"5"	"5"	"超能力女儿"	"201804cnlne.jpg"	"https://www.bilibili.com/bangumi/media/md78352"
+"6"	"5"	"敦君与女朋友"	"201804gjynpy.jpg"	"https://www.bilibili.com/bangumi/media/md78112"
+"7"	"7"	"魔卡少女樱 CLEAR CARD篇"	"201801bbxymsk.jpg"	"https://www.bilibili.com/bangumi/media/md8752"

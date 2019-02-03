@@ -1,0 +1,44 @@
+body{margin: auto;overflow-x: hidden;width: 100%;}
+a{text-decoration:none;}
+
+#background{width: 100%;position: absolute;z-index: -99;max-height: 1000px;overflow: hidden}
+#backgroundImage-shon{position: absolute;bottom: 0px;background-repeat: repeat-x;width: 100%;height: 50%;max-height: 491px;}
+/**#backgroundImage-shon2{width: 100%;height: 100px;background-color: #fff;position: absolute;bottom: 0;}**/
+#content{position: absolute;width: 100%;border: 0;margin: 0;padding: 0;margin: auto}
+.wp{width: 90%;max-width: 1700px;min-width: 700px;margin: 0 auto;}
+
+#header{height: 110px;position: relative;}
+#header-logoIMG{position: absolute;left: 0;top: 0;bottom: 0;right: auto;margin: auto}
+
+#header-login{color: #007eff;float: right;line-height: 110px;font-size: 12px;}
+
+.firme-l-2-1{float: left;width: calc(100% - 500px);min-height: 730px;position: relative;}
+.firme-r-2-1{float: right;width: 500px;}
+
+.register{width: 450px;min-height: 700px;background-color: #fff;box-shadow: 0px 5px 5px #0000002b;padding-top: 25px;padding-left: 25px;padding-right: 25px;position: relative}
+
+.reg.input-li{margin-bottom: 33px;}
+.erg-liwp-title{width: 100%;overflow: hidden;margin-bottom: 5px;}
+.erg-liwp{width: 100%;overflow: hidden;}
+.reg.li-title{float: left;font-size: 14px;color: #000;margin-right: 10px;}
+.reg.li-title-info{float: left;font-size: 14px;color: #7c7c7c}
+.reg.input-text{font-size: 12px;color: #007eff;margin-bottom: 5px;}
+
+.reg.input-2-1{border: 1px solid #e7e7e7;height: 29px;width: 180px;padding-left: 10px;background-color: #f4f4f4;margin-right: 15px;float: left;}
+.reg.input-1-1{}
+
+.reg.email-input{border: 1px solid #e7e7e7;border-right: 0px; height: 31px;width: 200px;padding-left: 10px;width: 180px;background-color: #f4f4f4;float: left;}
+.reg.email-input-inputinfo{width: 125px;height: 33px;border: 1px solid #e7e7e7;float: left;background-color: #f4f4f4;border-left: 0px;color: #9b9b9b;font-size: 14px;line-height: 33px;text-align: center}
+
+.reg.checkbox{float: left;}
+
+.reg.pdf{height: 80px;width: calc(100% - 20px);border: 1px solid #e7e7e7;background-color: #f4f4f4;font-size: 14px;padding-left: 10px;padding-right: 10px;padding-top: 10px;padding-bottom: 10px;margin-bottom: 15px;}
+
+.reg.ok{width: 190px;height: 55px;background-color: #007eff;color: #fff;font-size: 24px;border-radius: 5px;border: 0px;line-height: 55px;position: absolute;bottom: -30px;left: 0;right: 0;top: auto;margin: auto;}
+
+.js-inputauth-error{
+    height: 30px;
+    float:  left;
+    font-size: 14px;
+    line-height: 30px;
+}

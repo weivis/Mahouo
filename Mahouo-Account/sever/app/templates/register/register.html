@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="static/css/register.css">
+    <script type=text/javascript src="static/jq/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div id="content">
+        
+        <div id="header" class="wp">
+        
+            <img src="static/img/logo.png" id="header-logoIMG">
+            
+            <a href="/sign-in" id="header-login">已有账户 直接登陆</a>
+            
+        </div>
+        <div id="register-box" class="wp">
+            
+            <div class="firme-l-2-1">
+
+                <img src="static/img/register-avf-20180506.jpg" style="    position: absolute;
+                left: 0;
+                right: 0;
+                max-height: 400px;
+                top: 10%;
+                bottom: auto;
+                margin: auto;">
+                <div style="position: absolute;bottom: 95px;font-size: 24px;width: 100%;text-align: center;">快来加入我们吧 欧尼酱~！</div>
+                <div style="position: absolute;bottom: 65px;font-size: 14px;width: 100%;text-align: center;">创建账号 即可享受所有服服务喲 </div>
+            </div>
+            <div class="firme-r-2-1">
+            
+                <div id="register" class="register">
+                
+                    <div id="reg-username" class="reg input-li">
+                        <div class="erg-liwp-title">
+                            <div class="reg li-title">用户名</div>
+                            <div class="reg li-title-info">为了保证个人信息安全 请不要使用真实姓名</div>
+                        </div>
+                        <div class="erg-liwp">
+                            <input type="text" name="username" class="reg input-2-1" id="auth_username_input" placeholder="Name" onblur="auth_username_input()"/>
+                            <div id="js_auth_username_error" class="js-inputauth-error"></div>
+                        </div>
+                    </div>
+
+                    <div id="reg-mahouoemail" class="reg input-li">
+                        <div class="erg-liwp-title">
+                            <div class="reg li-title">我的邮箱名称</div>
+                            <div class="reg li-title-info">设置一个Mahouo邮箱名 (注册后不能修改)</div>
+                        </div>
+                        <div class="erg-liwp-title">
+                            <input type="text" name="mahouoemail" id="auth_mahouoemail_input" class="reg email-input" placeholder="" onblur="auth_mahouoemail_input()" onKeyUp="value=value.replace(/[^a-z0-9]/g,'')"/>
+                            <div class="reg email-input-inputinfo" style="    margin-right: 10px;">@Mahouo.com</div>
+                            <div id="js_auth_mahouoemail_error" class="js-inputauth-error"></div>
+                        </div>
+                        <div class="erg-liwp">
+                            <div class="reg input-text">请使用字母数字组合例如123abc</div>
+                            <div class="reg input-text">该邮箱作为登陆账号</div>
+                        </div>
+                    </div>
+                    
+                    <div id="reg-userphone" class="reg input-li">
+                        <div class="erg-liwp-title">
+                            <div class="reg li-title">手机号码</div>
+                            <div class="reg li-title-info">必填 用于接收验证码信息确保账户安全</div>
+                        </div>
+                        <div class="erg-liwp">
+                            <input type="text" name="userphone" id="auth_phone_input" class="reg input-2-1" placeholder="Phone" onblur="auth_phone_input()" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                            <div id="js_auth_phone_error" class="js-inputauth-error"></div>
+                        </div>
+                    </div>
+                    
+                    <div id="reg-userpassword" class="reg input-li">
+                        <div class="erg-liwp-title">
+                            <div class="reg li-title">密码</div>
+                            <div class="reg li-title-info">必填 用于接收验证码信息确保账户安全</div>
+                        </div>
+                        <div class="erg-liwp">
+                            <input type="password" name="password" id="input_password" class="reg input-2-1" placeholder="Password" onblur="password_1()"/>
+                            <input type="password" name="Rpassword" id="input_R_password" class="reg input-2-1" placeholder="Repeat Password" onblur="password_2()"/>
+                        </div>
+                        <div id="js_auth_password_error" class="js-inputauth-error"></div>
+                    </div>
+                    
+                    <div id="reg-useremail" class="reg input-li">
+                        <div class="erg-liwp-title">
+                            <div class="reg li-title">常用邮箱</div>
+                        </div>
+                        <div class="erg-liwp-title">
+                            <input type="text" name="useremail" id="auth_useremail_input" class="reg input-2-1" placeholder="Common Email" onblur="auth_useremail_input()"/>
+                            <div id="js_auth_useremail_error" class="js-inputauth-error"></div>
+                        </div>
+                        <div class="erg-liwp">
+                            <div class="reg input-text">个人常用邮箱 不用于登陆 便于接收账户通知和提醒 必填</div>
+                        </div>
+                    </div>
+                    
+                    <!--<div class="reg pdf" style="overflow-y: scroll;">为了能够给用户提供更好的用户体验 <br>你可能需要注册我们的Mahouo账户以便使用我们的所有功能 <br><br>
+
+为了保护你的账户 请保管好你的密码 登录账号等 你应对你的帐户动态例如登录地址登录时间 活动状态 <br><br>等跟进出现非本人操作可更换密码等加强安全或者绑定手机开启短信安全验证等<br><br>
+
+尽量不要在第三方应用中使用与Mahouo帐户相同的密码<br><br>
+
+我们会尽力保护用户的账户密码以加密等形式安全的保存在我们自己的数据中心以免造成泄露<br><br>
+
+注: 如果你使用了Mahouo则表示同意我们可以删除你的帐户同时禁用你的手机号和邮箱再次注册<br><br>
+                    </div>-->
+                    <div class="reg pdf" style="height: 30px;line-height: 30px;">
+                    	<a href="http://policies.mahouo.com/" target="_blank" style="margin-bottom: 50px;float: left;width: 100%;font-size: 14px;"><span style="color: #000">点击</span> 阅读使用条款和用户协议</a>
+					</div>
+                    <div id="reg-agreepdf" class="reg input-li" style="margin-bottom: 0">
+                        <div class="erg-liwp" style="width: fit-content;margin: 0 auto;margin-bottom: 0">
+                            <input type="checkbox" id="account_md_checkbox" name="agreepdf" class="reg checkbox"><span style="float: left;font-size: 12px;color: #404040">接受用户规则 | Accept user agreement</span>
+                        </div>
+                    </div>
+                    
+                    <input type="submit" value="注册" id="reg_post" class="reg ok"> 
+                    
+                </div>
+            
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <div id="background">
+        <div id="backgroundImage-shon" style="background-image: url(static/img/shon-1.png)"></div>
+        <div id="backgroundImage-shon2"></div>
+        <img id="backgroundImage" src="static/img/back.png">
+    </div>
+    <script type=text/javascript src="static/js/register.js"></script>
+</body>
+{% include 'statistics.html' %}

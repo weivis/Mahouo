@@ -1,0 +1,12 @@
+body{margin: 0 auto;background-color: #f4f4f4;padding-bottom: 150px;}
+a{text-decoration:none;}
+
+#header{width: 100%;height: 80px;position: relative;background-color: #008aff;text-align: center;line-height: 80px;font-size: 14px;color: #fff}
+.header_logo{position: absolute;left: 40px;right: auto;top: 0;bottom: 0;margin: auto;}
+.header_title{}
+.head_nextpage{padding-left: 20px;padding-right: 20px;height: 38px;border-radius: 100px;border:1px solid #fff;color: #fff;position: absolute;left: auto;right: 40px;top: 0;bottom: 0;margin: auto;line-height: 38px;text-align: center}
+
+.content-wp{width: 750px;margin-top: 50px;margin: auto;padding-top: 70px;}
+
+#page-background-fym{width: 100%;height: 100%;position: absolute;top: 0;bottom: 0;left: 0;right: 0;margin: auto;z-index: -999;}
+.page-background_page-1{width: 100%;height: 65%;background-color: #008aff}

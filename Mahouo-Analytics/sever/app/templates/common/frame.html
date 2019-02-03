@@ -1,0 +1,28 @@
+<head>
+    {% include 'common-head.html' %} 
+    <script type="text/javascript" src="https://mahdns-cdn-1251754029.cosgz.myqcloud.com/v2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<div id="header">
+    <div id="header-logo">Mahouo Analytics 分析</div>
+    <a href="https://www.mahouo.com/" target="_blank"><div style="float: left;font-size: 14px;color: #fff;line-height: 70px;margin-left: 40px;">首页</div></a>
+    <div style="float: left;font-size: 14px;color: #fff;line-height: 70px;margin-left: 40px;">我的网站即将推出</div>
+    <div id="header-usermodule-include">{% include 'common/module-top-user.html' %}</div>
+</div>
+<div id="l-nav" style="position: relative;">
+    <a href="/">
+        <div class="l-anv div" style="{% if page == 'index' %}background-color: #efefef{% endif %}">欢迎</div>
+    </a>
+    <a href="/submit">
+        <div class="l-anv div" style="{% if page == 'submit' %}background-color: #efefef{% endif %}">提交网站给我们收录</div>
+    </a>
+    <div class="l-anv div" style="border: 0">即将推出</div>
+    <a href="http://policies.mahouo.com/" target="_blank">
+        <div class="l-anv div" style="position: absolute;
+        border-top: 1px solid #d6d6d6;
+        border-bottom: 0px;
+        margin: 0;
+        bottom: 0;">Mahouo政策 隐私 使用条款</div>
+    </a>
+</div>
+<div id="r-content">{% block content %}{% endblock %}</div>

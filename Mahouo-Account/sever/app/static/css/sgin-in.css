@@ -1,0 +1,51 @@
+html {height:100%;position: relative;}
+body{overflow: hidden;margin: 0 auto;}
+a{text-decoration:none;}
+
+#background{width: 100%;height: 100%;position: absolute;z-index: -99;}
+
+
+#login-windows{width: 400px;height: 500px;background-color: #fff;margin: auto;box-shadow: 0px 5px 5px #00000030;position: absolute;left: 0;right: 0;top: 0;bottom: 0;}
+
+.login-windows_ct-wp{width: calc(100% - 100px);margin: 0 auto;margin-top: 30px;}
+
+.login-windows_ct-logo{width: 100%;}
+
+.login-windows_ct-userheadlogo{height: 210px;width: 100%;position: relative;}
+#login-windows_ct-userheadlogoImg{position: absolute;left: 0;right: 0;top: 0;bottom: 0;margin: auto}
+
+#account_auth-ok_key{bottom: 20px;position: absolute;left: 0;right: 0;text-align: center;font-size: 12px;}
+
+.login-input.input{width: calc(100% - 15px);height: 38px;background-color: #f4f4f4;border: 0;border-radius: 4px;margin: 0;padding: 0;border: 1px solid #eee;padding-left: 15px;font-size: 14px;}
+
+.login-input.next{width: 100%;height: 40px;background-color: #5081ff;border-radius: 4px;font-size: 14px;text-align: center;line-height: 40px;color: #fff;margin-top: 15px;cursor: pointer; border: 0px;}
+
+.login-windows_ct-register{position: absolute;bottom: 35px;font-size: 12px;color: #6098ff}
+
+#login-error{min-height: 55px;}
+.login-error.li{font-size: 14px;color: #f00;text-align: center;margin-top: 10px;}
+
+#login-remember{font-size: 12px;margin-top: 15px;}
+.login-input.checkbox{margin:2px;margin-right: 5px; float: left;}
+
+#back-page1{font-size: 14px;color: #868686;text-align: center;width: 100%;position: absolute;bottom: 30px;left: 0;right: 0;cursor: pointer}
+
+.hvr-fade {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+}
+.hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active {
+  background-color: #ff0078;
+  color: white;
+}

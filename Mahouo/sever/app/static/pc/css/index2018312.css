@@ -1,0 +1,59 @@
+body{margin: auto;position: relative;height:100%;}
+a{text-decoration:none;font-family: Microsoft YaHei;}
+
+/**头部**/
+header{width: 100%;}
+
+#search_data_pcs{
+    font-size:  10px;
+    width:  100%;
+    float:  left;
+    margin-bottom:  40px;
+    color: #b7b7b7;
+}
+
+/**(模块)用户**/
+#user-module{float: right;min-width: 200px;min-height: 60px;margin-right:25px;margin-top:10px;}
+
+/**大logo**/
+#lg{z-index: -10;margin-bottom: 20px;}
+#lg-ct{}
+
+/**搜索框logo**/
+#sh{position: absolute;left: 0;right: 0;top: 15%;margin: auto;bottom: auto; max-width: calc(100% - 40px);width: 600px}
+#sf-logo{height: 46px;float: left;width: 130px;position: relative;display: none;}
+#sf-min-logo{position: absolute;top: 0;bottom: 0;left: 0;right: 0; margin: auto;}
+
+/**搜索框**/
+#sf{max-width: 600px;position: relative;height: 40px;float: left;border-radius: 5px;width: 100%;}
+#sf-bn{width: 46px;height: 40px;border: 0;background-color: transparent;position: absolute;right: 0px;border-radius: 4px}
+#sf-it:hover{box-shadow:0 5px 5px #ececec;outline:none;}
+#sf-it{width: 100%;height: 40px;border: 1px solid #eaeaea; background-color: #f2f2f2;margin: 0 auto;padding-left: 10px;outline:none;border-radius: 4px}
+
+/**头部背景颜色**/
+#header-sh-bk{width: 100%;height: 70px;background-color: transparent;}
+
+/**搜索内容分类导航**/
+#searh-mu{background-color: #f4f4f4;width: 100%;height: 55px;border-bottom: 1px solid #e6e6e6;display: none;}
+#sh-mu-w{margin-left: 130px;line-height: 55px;height: 55px;}
+.se-mu-a{width: 60px;height: 100%;text-align: center;font-size: 14px;color: #000;float: left;}
+#se-mu-a-honer{border-bottom: 4px solid #2098d1;height: 51px;width: 60px;text-align: center;font-size: 14px;color: #000;float: left;color:#2098d1; }
+
+#out-ip-et{margin-top: 0px;float: left;display: none;width: 100%;}
+
+#ou-ip-et_ix{margin-left: 130px;margin-top: 20px;min-height: 300px;min-width: 650px;width: calc(100% - 1000px);float: left;padding-bottom: 120px}
+
+#ou-ip-et_if-tab{float: left;min-height: 500px;border-left: 1px solid #eee;margin-left: 30px;padding-left: 50px;margin-top: 50px;width: 400px;}
+/**返回内容区**/
+#cent{width: 100%; float: left;position: absolute;bottom: 0;overflow: hidden}
+
+#footer-min{width: 100%;height: 40px;background-color: #f4f4f4;width:100%;border-top: 1px solid #e6e6e6;float: left;}
+#fotter-min-left{float: left;min-width: 200px;}
+#fotter-min-right{float: right;min-width: 200px;}
+.footer-left-aher{font-family: Microsoft YaHei;font-size: 12px;margin-left: 25px;line-height: 35px;color: #000;line-height: 40px;}
+.footer-right-aher{font-family: Microsoft YaHei;font-size: 12px;line-height: 40px;float: right;margin-right: 25px;color: #000;}
+
+@media screen and (max-width: 500px){
+    #user-module{margin-top: 0px;}
+    #footer-min{display:none;}
+}

@@ -1,0 +1,43 @@
+<style>
+    #applist{width: 100%; right: 23px; top: 50px; max-width: 320px;position: absolute;z-index: 99;background-color: #f4f4f4;box-shadow: 0px 5px 4px #00000035;padding-bottom: 20px;display: none}
+    .index-top_header-fun-box:hover{background-color: #f9f9f9; box-shadow: 0 0 2px #c5c5c5;}
+    .index-top_header-fun-box{width: 100px;height: 100px;float: left;margin-top: 25px;margin-left: 5px;overflow: hidden;position: relative;}
+    .index-top_header-fun-box_img{margin: auto;width: 60px;height: 60px;margin-top: 3px;position: absolute;left: 0;right: 0;top: 7px;bottom: auto;}
+    .index-top_header-fun-box_txt{text-align: center;font-family: Microsoft YaHei;font-size: 13px;color: #0976f1;position: absolute;left: 0;right: 0;bottom: 7px;top: auto;margin: auto;font-weight: initial;color: #000}
+</style>
+<div id="applist">
+<!--{% if current_user.is_authenticated %}-->
+ <a href="https://account.mahouo.com/user/" target="_blank">
+ <div class="index-top_header-fun-box">
+ <img src="https://ssl1.mahouo.com/appico/account.png" class="index-top_header-fun-box_img">
+ <div class="index-top_header-fun-box_txt">
+ <span class="a_list">My Account</span>
+ </div>
+ </div>
+ </a>
+ <!--{% endif %}-->
+ 
+ <div id="get-list"></div>
+ 
+ <script type="text/javascript">
+         function app_list(data){
+             $("#get-list").prepend('<a href="'+ data['url'] +'" target="_blank"><div class="index-top_header-fun-box"><img src="https://ssl1.mahouo.com/appico/'+ data['img'] +'" class="index-top_header-fun-box_img"><div class="index-top_header-fun-box_txt"><span class="a_list">'+ data['name'] +'</span></div></div></a>')
+         };
+     
+         $(document).ready(function() {
+             $.getJSON('https://api.mahouo.com/applist/',
+             function(data, textStatus) {
+                 $.each((data),
+                 function(){
+                     app_list(this);
+                 });
+             });
+         });
+     
+         $(document).ready(function(){
+                $("#openapplistbutton").click(function(){
+                   $("#applist").toggle();
+                })    
+         });
+</script>
+</div>

@@ -1,0 +1,82 @@
+{% if sonlink %} {% for mclink in sonlink.hits.hits %}
+<div>
+    <div class="mc-link-main">
+        <a href="http://{{ mclink._source.mainurl }}" target="_blank">
+            <span class="mc-link-main-title">{{ mclink._source.maintitle }}</span>
+            <div style="margin-top:0px;">
+                <span class="mc-link-main-info">{{ mclink._source.maininfo }}</span>
+                <br>
+                <span class="mc-link-main-url">{{ mclink._source.mainurl }}</span>
+            </div>
+        </a>
+    </div>
+    <div class="son-link">
+        <div class="son-link-li">
+            <div class="son-link-a">
+                <a href="http://{{ mclink._source.son1url }}" target="_blank">
+                    <span class="son-link-title">{{ mclink._source.son1title }}</span>
+                    <div>
+                        <span class="son-link-info">{{ mclink._source.son1info }}</span>
+                        <br>
+                        <span class="son-link-url">{{ mclink._source.son1url }}</span>
+                    </div>
+                </a>
+            </div>
+            <div class="son-link-a">
+                <a href="http://{{ mclink._source.son2url }}" target="_blank">
+                    <span class="son-link-title">{{ mclink._source.son2title }}</span>
+                    <div>
+                        <span class="son-link-info">{{ mclink._source.son2info }}</span>
+                        <br>
+                        <span class="son-link-url">{{ mclink._source.son2url }}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="son-link-li">
+            <div class="son-link-a">
+                <a href="http://{{ mclink._source.son3url }}" target="_blank">
+                    <span class="son-link-title">{{ mclink._source.son3title }}</span>
+                    <div>
+                        <span class="son-link-info">{{ mclink._source.son3info }}</span>
+                        <br>
+                        <span class="son-link-url">{{ mclink._source.son3url }}</span>
+                    </div>
+                </a>
+            </div>
+            <div class="son-link-a">
+                <a href="http://{{ mclink._source.son4url }}" target="_blank">
+                    <span class="son-link-title">{{ mclink._source.son4title }}</span>
+                    <div>
+                        <span class="son-link-info">{{ mclink._source.son4info }}</span>
+                        <br>
+                        <span class="son-link-url">{{ mclink._source.son4url }}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="son-link-li">
+            <div class="son-link-a">
+                <a href="http://{{ mclink._source.son5url }}" target="_blank">
+                    <span class="son-link-title">{{ mclink._source.son5title }}</span>
+                    <div>
+                        <span class="son-link-info">{{ mclink._source.son5info }}</span>
+                        <br>
+                        <span class="son-link-url">{{ mclink._source.son5url }}</span>
+                    </div>
+                </a>
+            </div>
+            <div class="son-link-a">
+                <a href="http://{{ mclink._source.son6url }}" target="_blank">
+                    <span class="son-link-title">{{ mclink._source.son6title }}</span>
+                    <div>
+                        <span class="son-link-info">{{ mclink._source.son6info }}</span>
+                        <br>
+                        <span class="son-link-url">{{ mclink._source.son6url }}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %} {% endif %}

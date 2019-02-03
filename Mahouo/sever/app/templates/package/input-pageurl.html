@@ -1,0 +1,14 @@
+<style>
+    #search_tab{margin: 0 auto;display: flex;justify-content: center;}
+    .next_tab_butt{width: 65px;height: 35px;line-height: 35px;text-align: center;font-size: 18px;background-color: #ff375d;font-family: arial;border-radius: 10%;color: #fff}
+    .nav-tab{width: 35px;height: 35px;text-align: center;font-size: 14px;line-height: 35px;float: left;background-color: #f4f4f4;margin-right: 5px;list-style:none; text-decoration: none;border-radius: 10%;color: #000}
+    .nav-tab_a{color: #fff !important;background-color: #ff375d;}
+    a{text-decoration: none;}
+</style>
+<div id="search_tab">
+    {% if page > 1 %}<a href="search?s={{s}}&page={{ page - 1 }}&spage=0&charted=off&cacheid=&otcon="><div class="next_tab_butt" style="margin-right: 15px;"><span>◄</span></div></a>{% endif %}
+
+    {% if page > 1 %}<a href="search?s={{s}}&page=1&spage=0&charted=off&cacheid=&otcon="><li class="nav-tab">{{page}}</li></a>{% endif %}
+
+    {% if page_nums > page %}<a href="search?s={{s}}&page={{ page + 1 }}&spage=0&charted=off&cacheid=&otcon="><div class="next_tab_butt" style="margin-left: 10px"><span>►</span></div></a>{% endif %}
+</div>

@@ -1,0 +1,94 @@
+
+
+#commonly_com{overflow: hidden;}
+#commonly_com-title{float: left;width: 100%;font-size: 18px;color: #313131;margin-bottom: 15px;}
+.commonly_com.a{width: 11.1%;float: left;}
+.commonly_com.img{float: left;height: 40px;width: 40px;overflow: hidden;margin-right: 10px;}
+.commonly_com.name{float: left;color: #313131;font-size: 14px;line-height: 40px;}
+
+
+/*------------------------------*/
+
+
+#index-page1{overflow: hidden}
+#page1-cllorsimg{float:left;width: 643px;height: 270px;background-color: #fff}
+#page1-hotbold{float: left;width: 297px;}
+#page1-bangumi{float: left; width: 545px;}
+
+
+/*------------------------------*/
+
+
+#classification_com{overflow: hidden;}
+.classification_com.module{width: 335px;float: left;margin-right: 20px;display: inline-block;padding-right: 15px;padding-top: 15px;padding-left: 15px;min-height: 220px;background-color: #fff}
+.classification_com.module:nth-child(4n){margin-right: 0}
+.classification_com.title{font-size: 16px;color: #313131;width: 100%;}
+.classification_com.a{width: 33.3%;margin-top: 25px;float: left;color: #515151;font-size: 14px;}
+
+
+/*------------------------------*/
+
+
+.section-focus-pic{margin:0px auto 0 auto;height:100%;width:100%;overflow:hidden;position:relative;}
+.section-focus-pic ul li{position:absolute;top:0;left:100%;width:100%;height:100%;}
+.section-focus-pic ul li h3{position:absolute;bottom:0px;left:0;width: 400px;font-weight:normal;color:#FFF;margin-left: 20px;z-index: 111;font-size: 14px; font-family:"微软雅黑";}
+.section-focus-pic ul li div{position:absolute;bottom:0;left:0;height:50px;background:linear-gradient(to bottom, #ffffff00, #000000);width:100%;opacity: 1;filter: alpha(opacity=60);}
+.section-focus-pic .pages{width:100%;height:100%;overflow: hidden}
+.section-focus-pic .controler{position:absolute;bottom:20px;right:20px;}
+.section-focus-pic .controler b{cursor:pointer;width:20px;height:10px;display:block;overflow:hidden;text-indent:20px;background:url(../img/news_index_icon.png) no-repeat -136px 3px; float:left;margin:0 0 0 5px;}
+.section-focus-pic .controler b.down{background-position:-161px 1px;}
+.section-focus-pic .controler2 a{display:block; width:73px;position:absolute;top:0;bottom: 0;margin: auto ;height:73px;}
+.section-focus-pic .controler2 a i{cursor:pointer;display:block;width:22px;height:34px; background:url(../img/carousel_l.png) no-repeat;}
+.section-focus-pic .controler2 .prev{left:15px;opacity: 0.4}
+.section-focus-pic .controler2 .prev i{background-position:-34px -68px;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/star_05.png');margin-left:5px;}
+.section-focus-pic .controler2 .prev:hover i{left:10px;background-position:-34px -24px;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/star_03.png');}
+.section-focus-pic .controler2 .next{right:15px;opacity: 0.4}
+.section-focus-pic .controler2 .next i{background-position:-62px -68px;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/star_06.png');margin-left:10px;}
+.section-focus-pic .controler2 .next:hover i{right:10px;background-position:-62px -24px;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/star_04.png');}
+.hvr-fade-controler {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    opacity: 0.1
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: color, background-color;
+    transition-property: color, background-color;
+  }
+  .hvr-fade-controler:hover, .hvr-fade-controler:focus, .hvr-fade-controler:active {
+    background-color: #000000;
+    color: white;
+  }
+
+  
+/*------------------------------*/
+
+
+#module-hota{width: 100%;}
+#module-hota_title{font-size: 18px;color: #929292;font-weight: 600;margin-bottom: 5px;}
+.module-hota_content-li{font-size: 14px;width: 100%;float: left;padding-top: 5px;padding-bottom: 5px;}
+.module-hota_content-a{color: #2b2b2b;}
+
+
+/*------------------------------*/
+
+
+#module-bangumi{width: 100%;}
+#module-bangumi-tab{width: 100%;height: 19px;}
+#module-bangumi-title{font-size: 18px;color: #929292;font-weight: 600;float: left;height: 19px;line-height: 19px;}
+#module-bangumi-title-r-sel{float: right;height: 19px;width: calc(100% - 100px)}
+.module-bangumi-tab-a{width: 12.5%;font-size: 12px;height: 19px;line-height: 19px;text-align: center;float: left;}
+.module-bangumi-tab-a_hot{background-color: #e4007f;color: #fff;}
+.module-bangumi_animelist-content{width: 100%;margin-top: 15px;}
+.module-bangumi_animelist{width: 100%;overflow: hidden}
+.module-bangumi_anime-a{width: 30%;overflow: hidden;float: left;margin-bottom: 20px;margin-right: 15px;}
+.module-bangumi_anime-img{width: 35px;height: 35px;overflow: hidden;border-radius: 5px;float: left;margin-right: 10px;}
+.module-bangumi_anime-title{font-size: 14px;float: left;line-height: 35px;}
+
+#page1-bangumi:nth-child(3n){margin-right: 0px;}

@@ -1,0 +1,50 @@
+{% extends "safe/frame.html" %}{% block content %}
+<div class="inputpage-body">
+    <div class="inputpage-conent-body">
+        <div class="page-content-li page-content-liwp_550">
+            <form action="update-post"  method="POST">
+                <div class="page-content-input inputli">
+                    <div class="page-content-input title">密保问题1</div>
+                    <select class="page-content-input select_center" name="pr1">
+                            {% include 'safe/secret-problem.html' %}
+                    </select>
+                </div>
+                
+                <div class="page-content-input inputli">
+                    <div class="page-content-input title">回复你所选中的密保问题的答案</div>
+                    <input type="text" class="page-content-input text" name="ans1">
+                </div>
+                
+                <div class="page-content-input inputli">
+                    <div class="page-content-input title">密保问题2</div>
+                    <select class="page-content-input select_center" name="pr2">
+                            {% include 'safe/secret-problem.html' %}
+                    </select>
+                </div>
+                
+                <div class="page-content-input inputli">
+                    <div class="page-content-input title">回复你所选中的密保问题的答案</div>
+                    <input type="text" class="page-content-input text" name="ans2">
+                </div>
+                
+                <div class="page-content-input inputli">
+                    <div class="page-content-input title">密保问题3</div>
+                    <select class="page-content-input select_center" name="pr3">
+                            {% include 'safe/secret-problem.html' %}
+                    </select>
+                </div>
+                
+                <div class="page-content-input inputli">
+                    <div class="page-content-input title">回复你所选中的密保问题的答案</div>
+                    <input type="text" class="page-content-input text" name="ans3">
+                </div>
+                
+                <div class="page-content-input inputli">
+                    <input type="submit" class="page-content-pobut" name="ans3">
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    </div>
+{% endblock %}

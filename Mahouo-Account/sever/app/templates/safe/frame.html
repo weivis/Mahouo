@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('safe.static', filename='css/safe-frame.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('safe.static', filename='css/safe-style.css')}}">
+</head>
+
+<div id="header">
+    <img src="{{ url_for('safe.static', filename='img/safelogo.png')}}" class="header_logo">
+    <div class="header_title">{{ title }}</div>
+    {% if next_url %}<a href="" class="head_nextpage">下一步</a>{% endif %}
+</div>
+<div class="content-wp">
+        {% block content %}{% endblock %}
+</div>
+
+<div id="page-background-fym">
+    <div class="page-background_page-1"></div>
+    <div class="page-background_page-2"></div>
+</div>
+{% include 'statistics.html' %}

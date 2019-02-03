@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="static/css/index.css">
+
+{% if current_user.is_authenticated %} 
+<div id="login-type"><a href="/user" style="font-size: 14px;color: #fff">你的账户已登录 点这前往我的账户 ></a></div>
+{% endif %}
+
+<div id="page-1">
+
+    <div id="page-1_content">
+        <div id="page-name">Mahouo账户</div>
+        <div id="page-1_a">
+            <a href="/sign-in"><div class="page-1-aty hvr-fade" style="float: left">登录</div></a>
+            <a href="/register"><div class="page-1-aty hvr-fade" style="float: right">注册</div></a>
+        </div>
+    </div>
+    <div style="background-image: url(static/img/boxshon.png)" id="page-1_boxshon"></div>
+    <img src="static/img/1.jpg" height="100%">
+    
+</div>
+<div id="page-2">一个Mahouo账户 即可使用我们全部服务</div>
+<div id="page-3">
+    <img src="static/img/appico.png" id="page-3appico">
+</div>
+{% include 'statistics.html' %}

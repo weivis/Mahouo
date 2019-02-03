@@ -1,0 +1,9 @@
+.outdata-a{background-color: #fff;margin-bottom: 15px;box-shadow: 0px 3px 5px #0000000b;overflow: hidden;padding-bottom: 15px;}
+.outdata-title{color: #000;font-size: 16px;width:100%; white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.outdata-wp{padding-left: 15px;padding-right: 15px;padding-top: 15px;}
+.outdata-info{overflow: hidden;margin-top: 10px;}
+.outdata-img{width: 65px;float: left;margin-right: 10px;min-height: 65px;}
+.outdata-keky_style{overflow:hidden;max-height: 57px;font-size: 14px;color: #575757;float: left;}
+.outdata-keky{width: calc(100% - 75px);}
+.outdata-keky_nopic{width: 100%;}
+.outdata-url{margin-top: 10px;color: #bfbfbf;font-size: 12px;}

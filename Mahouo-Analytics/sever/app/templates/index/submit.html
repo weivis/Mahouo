@@ -1,0 +1,41 @@
+{% extends "common/frame.html" %}{% block content %}
+
+<link rel="stylesheet" type="text/css" href="static/css/sumurlpage.css">
+<div id="sumurlpage">
+    <div class="sumurlpage title">提交网站给我们</div>
+    <div class="sumurlpage title-14">提交的域名请尽量完整 http:// https:// 等前缀无需去除</div>
+    
+    <div>
+        <input type="text" id="sumurlpage-input" placeholder="请输入域名或地址 - 例如https://www.mahouo.com">
+    </div>
+    <div>
+        <div id="sumurlpage-butt">提交</div>
+    </div>
+    <div style="font-size: 14px;position: absolute;bottom: 50px;">感谢你对Mahouo的贡献 提交的域名将会在1-2天内进行收录</div>
+</div>
+
+<script>
+$('#sumurlpage-butt').click(function(){
+    var url = $('#sumurlpage-input').val()
+    if(url == ''){
+        alert('请输入内容')
+    }else{
+    $.ajax({
+        type: "POST", //方式 可GET 或 POST
+        url: "/api/submit_url",
+        data: {"url": url},
+        dataType: 'json',
+        success: function (data) {
+            if(data['t'] == 0){
+                alert('提交成功 感谢你帮助我们完善搜索内容')
+            }else{
+                alert([data['t']])
+            }
+        // 返回的数据操作
+    }
+    });
+    }
+});
+</script>
+
+{% endblock %}

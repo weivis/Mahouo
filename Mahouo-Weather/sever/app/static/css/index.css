@@ -1,0 +1,110 @@
+#header{width: 100%;height: 70px;}
+
+#header-logo{margin-left: 25px;height: 100%;width: 207px; position: relative;float: left;overflow: hidden;}
+.header-logo.ico{position: absolute;top: 0;bottom: 0;left: 0;right: auto;margin: auto;}
+
+#header-nav{height: 100%;margin-left: 40px;float: left;}
+#moremap{height: 100%;line-height: 70px;float: left;color: #fff;font-size: 14px;}
+#usermap{float: left;height: 100%;line-height: 70px;color: #fff;font-size: 14px;margin-left: 40px;}
+#usermap-ico{height: 100%;float: left;position: relative;width: 12px;margin-right: 5px;}
+
+@-webkit-keyframes contenta /* Safari 和 Chrome */
+{
+0%   {margin-top: 270px;}
+100% {margin-top: 170px}
+}
+.content_anime{
+    -webkit-animation:contenta 1s; /* Safari and Chrome */
+}
+
+@-webkit-keyframes backgroundanime /* Safari 和 Chrome */
+{
+0%   {margin-top: -180px;padding-bottom: 180px}
+100% {margin-top: -0px;padding-bottom: 0px}
+}
+.background-css3{
+    -webkit-animation:backgroundanime 1s; /* Safari and Chrome */
+}
+
+@-webkit-keyframes contentanime /* Safari 和 Chrome */
+{
+0%   {margin-bottom: 150px}
+100% {margin-bottom: 40px}
+}
+.content-css3{
+    -webkit-animation:contentanime 2s; /* Safari and Chrome */
+}
+
+@-webkit-keyframes contentanime_top /* Safari 和 Chrome */
+{
+0%   {margin-bottom: 150px}
+100% {margin-bottom: 10px}
+}
+.content_top-css3{
+    -webkit-animation:contentanime_top 1s; /* Safari and Chrome */
+}
+
+#page-background{width: 100%;position: absolute;top: 0px;margin: auto;overflow: hidden;z-index: -99;}
+
+#page-background_header-of_boxshon{width: 100%;height: 85px;background-repeat: repeat-x;position: absolute;}
+
+
+.content-wp{max-width: 1700px;width: 90%; margin: 0 auto;margin-top: 170px}
+
+.weather-datali{width: 100%;margin-bottom: 40px;overflow: hidden}
+.opy-1{background-color: #00000080}
+.opy-2{background-color: #00000042}
+.data-li_title{width: 100%;color: #555555;font-size: 16px;margin-bottom: 15px;}
+
+#richu{font-size: 14px;padding-left: 15px;padding-right: 15px;height: 40px;line-height: 40px;float: left;color: #fff}
+
+#wrather-info{height: 195px;float: left;}
+
+.wrather-info.ico{width: 90px;height: 100%;position: relative;float: left;}
+.wrather-info.ico-img{position: absolute;left: 0;right: 0;top: 0;bottom: 0;margin: auto;}
+
+.wrather-info.info-fr{float: left;overflow: hidden;height: 100%;}
+
+.wrather-info.konqizhiliang{background-color: #fff100;height: 25;padding-left: 10px;padding-right: 10px;line-height: 25px;border-radius: 4px;margin-top: 20px;float: left;}
+.wrather-info.wendu{font-size: 72px;color: #fff;height: 76px;float: left;}
+.wrather-info.text{font-size: 36px;color: #fff;height: 42px;margin-top: -5px}
+
+.wrather-info.jinru-wendu{font-size: 18px;color: #fff;height: 25px;line-height: 25px;}
+.wrather-info.date{font-size: 18px;color: #fff;margin-top: 15px;}
+.wrather-info.city{font-size: 24px;color: #fff;margin-top: 10px;}
+
+.wrather-info.info-list{width: 130px;height: 100%;float: left;margin-right: 45px;}
+.wrather-info.info-list_li{width: 100%;overflow: hidden;margin-top: 15px;font-size: 14px;color: #fff}
+.wrather-info.info-list_li_l{float: left;}
+.wrather-info.info-list_li_r{float: right;}
+.wrather-info.info-list_li2{width: 100%;overflow: hidden;margin-top: 8.3px;font-size: 14px;color: #fff}
+
+#today{overflow-x: hidden}
+#today::-webkit-scrollbar-thumb{border-radius: 10px;}
+.today.a{height: 195px;min-width: 140px;float: left;margin-right: 15px;}
+.today_a.li{width: calc(100% - 30px);color: #fff;margin: 0 auto;}
+.today_a.ico{width: 100%;height: 95px;position: relative;}
+.today_a.img{position: absolute;left: 0;right: 0;top: 0;bottom: 0;margin: auto}
+.today_a.date{font-size: 18px;margin-top: 15px;}
+.today_a.wendu{font-size: 24px;}
+
+.jianyi.a{width: 420px;float: left;height: 85px;padding-left: 15px;padding-right: 15px;padding-top: 15px;margin-right: 15px;margin-bottom: 15px;}
+.jianyi.title{font-size: 16px;color: #fff;font-weight: bold}
+.jianyi.text{font-size: 14px;color: #fff}
+
+@media screen and (max-width: 1725px) {
+    #today{overflow-x: scroll}
+}
+
+@media screen and (max-width: 1129px) {
+    #today{overflow-x: hidden}
+    #wrather-info{width: 800px;}
+    .wrather-info.info-list{margin-right: 25px;}
+    .wrather-info.info-list{width: 130px;}
+    .today.a{height: 195px;min-width: 130px;float: left;margin-right: 15px;}
+    .jianyi.a{width: 300px;}
+}
+@media screen and (max-width: 560px) {
+    .jianyi.a{width: 430px;}
+    .wrather-info.ico{width: 60px;height: 100%;position: relative;float: left;}
+}

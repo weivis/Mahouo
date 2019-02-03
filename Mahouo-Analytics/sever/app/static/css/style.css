@@ -1,0 +1,8 @@
+body{margin: 0 auto}
+a{text-decoration:none;}
+#header{height: 70px;width: 100%;background-color: #14445a}
+#header-logo{margin-left: 25px;height: 100%;line-height: 70px;color: #fff;font-size: 20px;float: left;}
+#header-usermodule-include{float: right;margin-top: 5px;margin-right: 25px;}
+#l-nav{width: 230px;height: calc(100% - 70px);border-right: 1px solid #d6d6d6;float: left}
+.l-anv.div{width: calc(100% - 25px);height: 50px;border-bottom: 1px solid #d6d6d6;font-size: 14px;color: #000;line-height: 50px;padding-left: 25px;}
+#r-content{width: calc(100% - 231px);float: right;}

@@ -1,0 +1,29 @@
+{% extends "safe/frame.html" %}{% block content %}
+<div class="inputpage-body">
+    <div class="inputpage-body">
+        <div class="inputpage-conent-body">
+        <div class="page-content-module-title page-content-li">验证密保问题</div>
+            <div class="page-content-li page-content-liwp_400">
+                <form action="/safe/security/auth" method="POST">
+                    <div class="page-content-input inputli">
+                        <div class="page-content-input title">请选择一个你正在使用的密保问题</div>
+                        <select class="page-content-input select_center" name="select">
+                                {% include 'safe/secret-problem.html' %}
+                        </select>
+                    </div>
+        
+                    <div class="page-content-input inputli">
+                        <div class="page-content-input title">回复你所选中的密保问题的答案</div>
+                        <input type="text" name="out" class="page-content-input text">
+                    </div>
+                    
+                    
+                    <div class="page-content-input inputli">
+                        <input type="submit" class="page-content-pobut">
+                    </div>
+                    
+                </form>
+            </div>
+            </div>
+        </div>
+{% endblock %}

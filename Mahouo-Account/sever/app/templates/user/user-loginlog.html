@@ -1,0 +1,39 @@
+<link rel="stylesheet" type="text/css" href="static/css/user-loginlog.css">
+{% extends "user/frame.html" %}{% block content %}
+
+<div id="login-log">
+    <div style="font-size: 18px;color: #595959">如出现疑似非本人操作行为请立刻加强安全</div>
+    <br>
+    <div id="login-log-list">
+        <div id="list-title">
+            <li>
+                <div class="data-li data-date data-wp-120">日期</div>
+                <div class="data-li data-time data-wp-120">时间</div>
+                <div class="data-li data-ip data-wp-150">IP</div>
+                <div class="data-li data-map data-wp-150">地区</div>
+            </li>
+        </div>
+        <br>
+        <div id="list-data">
+            {% for i in data %}
+                <li style="width: 100%;">
+                    <div class="data-li data-wp-120">{{ i.date }}</div>
+                    <div class="data-li data-wp-120">{{ i.time }}</div>
+                    <div class="data-li data-wp-150">{{ i.ip }}</div>
+                    <div class="data-li data-wp-150">{{ i.region }}</div>
+                    <br>
+                    <br>
+                    <div class="data-li">登陆平台 : {{ i.platform }}</div>
+                </li>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

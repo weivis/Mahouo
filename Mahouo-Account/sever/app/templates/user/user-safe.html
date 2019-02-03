@@ -1,0 +1,52 @@
+<link rel="stylesheet" type="text/css" href="static/css/user-safe.css">
+{% extends "user/frame.html" %}{% block content %}
+<p>当前密保设置可用 手机和邮箱请等待更新完善</p>
+<div id="page-safe" class="page-safe-wp">
+    <div class="safe-libox">
+        <div class="safe-libox_name"><div class="safe-libox_name-title">手机认证</div><div class="colortype-ok">
+            {% if safedata.phone == 1 %}
+            <span style="color: #05ac28;">以认证</span>
+            {% else %}
+            <span style="color:#ff0000">未认证</span>
+            {% endif %}
+        </div><a href="/safe/phone-auth" class="safe-set">
+            {% if safedata.phone == 1 %}
+            修改
+            {% else %}
+            前往认证
+            {% endif %}
+        </a></div>
+        <div class="safe-content">手机号 : {{ phone }}</div>
+    </div>
+    <div class="safe-libox">
+        <div class="safe-libox_name"><div class="safe-libox_name-title">邮箱认证</div><div class="colortype-ok">
+            {% if safedata.email == 1 %}
+            <span style="color: #05ac28;">以认证</span>
+            {% else %}
+            <span style="color:#ff0000">未认证</span>
+            {% endif %}
+        </div>
+        <a href="/safe/email-auth" class="safe-set">{% if safedata.email == 1 %}修改{% else %}前往认证{% endif %}</a>
+    </div>
+        <div class="safe-content">邮箱 : {{ email }}</div>
+    </div>
+    
+    <div class="safe-libox">
+        <div><div class="safe-libox_name-title">密保</div><div class="colortype-ok">
+            {% if safedata.security == 1 %}
+            <span style="color: #05ac28;">以设置</span>
+            {% else %}
+            <span style="color:#ff0000">未设置</span>
+            {% endif %}
+        </div><a href="/safe/security" class="safe-set" target="_blank">
+            {% if safedata.security == 1 %}
+            修改
+            {% else %}
+            去设置
+            {% endif %}
+        </a></div>
+    </div>
+    
+</div>
+
+{% endblock %}

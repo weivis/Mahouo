@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="static/css/sgin-in.css">
+    <script type=text/javascript src="static/jq/jquery.min.js"></script>
+    <script type="text/javascript" src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+	<meta name="description" content="这里是Mahouo搜索引擎项目 目前处于开发状态 期待更多的新功能上线哟"/>
+	<meta name="keywords" content="Mahouo搜索引擎 二次元搜索引擎 动漫搜索引擎 ACG 动漫"/>
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+</head>
+
+<body>
+
+    <div id="login-windows">
+        <div class="login-windows_ct-wp">
+            <div class="login-windows_ct-logo"><img src="static/img/login-windows-minlogo.png"></div>
+            
+            <div class="login-windows_ct-userheadlogo">
+                <img src="static/img/nohead.png" id="login-windows_ct-userheadlogoImg">
+                <div id="account_auth-ok_key">输入你的手机号或Mahouo邮箱</div>
+            </div>
+            
+            <div id="auth-account" style="display: block">
+                <input type="text" name="key" id="input-account" class="login-input input" placeholder="Email or Phone"/>
+                <!--
+                    <div id="login-error">
+                        <div class="login-error li">该账户已被禁止登陆 - <a href="" style="color: #0058ff">了解详细</a></div>
+                        <div class="login-error li">该账户不存在 请检查输入是否有误</div>
+                        <div class="login-error li">系统繁忙</div>
+                    </div>
+                -->
+                <div class="login-input next hvr-fade" id="auth_account"><a>下一步</a></div>   
+                <a href="/register" class="login-windows_ct-register">没有账号？ 立即创建！</a>
+            </div>
+            
+            <div id="auth-password" style="display: none">
+                    <input type="password" name="password" class="login-input input" id="input-password" placeholder="Password"/>
+                    <input name='key' value="" style="display: none">
+                    
+                    <div id="login-error" style="min-height: 0px;">
+                        <div class="login-error li" id="password_error" style="display: none">密码错误</div>
+                    </div>
+                    
+                    <input type="submit" value="Sign In" id="sign_post" class="login-input next hvr-fade">
+                    <div id="login-remember"><input type="checkbox" id="login_long" name="check" class="login-input checkbox"><span style="float: left;">记住登录</span><a href="https://account.mahouo.com/register" style="float: right">忘记密码?</a></div>
+            <div id="back-page1">返回上一步</div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="background">
+        <img id="backgroundImage" src="static/img/back.png">
+    </div>
+    <script type=text/javascript src="static/js/sgin-in.js"></script>
+</body>
+{% include 'statistics.html' %}

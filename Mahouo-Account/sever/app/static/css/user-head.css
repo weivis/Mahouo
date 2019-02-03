@@ -1,0 +1,22 @@
+html {height:100%;position: relative;}
+a{text-decoration:none;}
+
+#upload_tpye{
+    width: 810px;
+    height: 50px;
+    background-color: #56c300;
+    line-height: 50px;text-align: center;
+    color:#fff;
+    font-size: 14px;
+}
+
+#page-headuploads{background-color: #fff;overflow: hidden;width: 765px;padding-top: 30px;padding-left: 45px;padding-bottom: 40px;}
+#header-shso{overflow: hidden;}
+.header-shon-li{float: left;margin-right: 50px}
+.header-shon-border{float: left;}
+#header-shon-px1{width: 211px;height: 211px;overflow: hidden;border: 3px solid #eaf2f6;}
+#header-shon-px2{width: 156px;height: 156px;overflow: hidden;border: 3px solid #eaf2f6;}
+#header-shon-px3{width: 106px;height: 106px;overflow: hidden;border: 3px solid #eaf2f6;}
+#header-shon-px4{width: 66px;height: 66px;overflow: hidden;border: 3px solid #eaf2f6;}
+
+.uploadbutt{height: 40px;width: 115px;background-color: #008aff;border-radius: 2px;float: left;margin-right: 20px;font-size: 14px;text-align: center;line-height: 40px;color: #fff}

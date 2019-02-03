@@ -1,0 +1,25 @@
+#pic
+
+{% if a._source.pic %}
+<div class="link-pic">
+    <a href="{{ a._source.tcp }}{{ a._source.url }}" target="_blank">
+        <img src="https://ssl2.mahouo.com/{{ a._source.pic }}" class="link-pic-img">
+    </a>
+</div>
+{% endif %}
+
+#report
+<div class="index_report" data-indexid="#a._id">举报</div>
+
+{% if a._source.content == None %}
+{% if a._source.description %}
+    <span class="link-siz-info">{{ a._source.description }}</span><br>
+{% endif %}
+<span class="link-date-date">
+    {{ a._source.keywords }}<br>
+</span>
+{% else %}
+<span class="link-siz-info">
+{{ a._source.content }}<br>
+</span>
+{% endif %}

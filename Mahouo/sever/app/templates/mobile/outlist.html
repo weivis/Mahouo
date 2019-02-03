@@ -1,0 +1,24 @@
+{% for i in results.hits.hits %}
+<a href="{{ i._source.url }}" target="_blank" data-key="{{ i._id }}">
+    <div class="outdata-a o-wp">
+        <div class="outdata-wp">
+            <div class="outdata-title">
+                {{ i._source.title }}
+            </div>
+            <div class="outdata-info">
+                {% if i._source.pic %}
+                    <div class="outdata-img">
+                        <img src="https://ssl2.mahouo.com/{{ i._source.pic }}" width="100%">
+                    </div>
+                {% endif %}
+                <div class="outdata-keky_style {% if i._source.pic %}outdata-keky{% else %}outdata-keky_nopic{% endif %}">
+                    {{ i._source.description }}
+                </div>
+            </div>
+            <div class="outdata-url">
+                {{ i._source.url }}
+            </div>        
+        </div>
+        </div>
+    </a>
+{% endfor %}

@@ -1,0 +1,15 @@
+#header{margin-top: 24px;overflow: hidden;max-width: 100%;}
+.header-func.l{float: left;}
+.header-func.r{float: right;}
+
+#logo{margin-top: 65px;overflow: hidden;min-height: 130px;position: relative;}
+.logo-img{left: 0;right: 0;top: 0;bottom: 0;margin: auto;position: absolute;}
+
+#search{position: relative;margin-top: 24px;}
+#sbtico{margin-top: 5px;margin-right: 0px;}
+#sf-bn{position: absolute;right: 0px;left: auto;height: 40px;border: 0px;background-color: #0000;padding: 0;margin: 0;width: 40px;}
+#sf-it{width: calc(100% - 10px);height: 40px; border:0px; background-color: #f4f4f4;border-radius: 4px; box-shadow: 0px 3px 5px #0000002b;padding-left: 10px;padding-top: 0;padding-bottom: 0px;}
+
+#footer{bottom: 0;top: auto;left: 0;right: 0;height: 50px;position: absolute;font-size: 12px;color: #b5b5b5;text-align: center;}
+
+#openapplistbutton{cursor: pointer}

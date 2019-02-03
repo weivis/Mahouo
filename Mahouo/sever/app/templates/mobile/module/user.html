@@ -1,0 +1,43 @@
+<div id="usermodule">
+
+    <style>
+            .usermodule.head{width: 40px;height: 40px;border-radius: 100%;overflow: hidden;float: left;cursor: pointer}
+            .usermodule.name{float: left;padding-left: 5px;font-size: 14px; line-height: 40px;}
+            #usermp{width: 200px;background-color: #f4f4f4;overflow: hidden;position: absolute;z-index: 999;top: 75px;box-shadow: 0px 5px 4px #00000035;display: none;}
+            .usermp.userne{padding-left: 15px;padding-top: 20px;background-color: #4e85f6;padding-bottom: 15px;}
+            .usermp.li-a{height: 39px;border-bottom: 1px solid #dddddd;line-height: 39px;padding-left: 15px;font-size: 12px;color: #575757;}
+            .usermp.li-a:hover{background-color: rgb(230, 230, 230)}
+    </style>
+
+    {% if current_user.is_authenticated %} 
+
+    <div id="usermp">
+        
+        <div class="usermp userne">
+        <div style="font-size: 14px;color:#fff">{{ current_user.username }}</div>
+        <div style="font-size: 12px;color:#fff;margin-top: 8px;">{{ current_user.user_email }}@mahouo.com</div>
+        </div>
+        
+        <a href="https://account.mahouo.com/user/" target="_blank"><div class="usermp li-a">账户设置</div></a>
+        <a href="" target="_blank"><div class="usermp li-a">消息</div></a>
+        <a href="https://account.mahouo.com/sign-in/logout"><div class="usermp li-a" style="border: 0px;">退出账户<img src="http://ssl1.mahouo.com/image/module-usermodule/2/logout.png" style="float: right;margin-top: 10px;margin-right: 13px"></div></a>
+    </div>
+        
+        <div class="usermodule head" id="usermodule-userhead"><img src="http://ssl1.mahouo.com/head/{% if current_user.head == None %}no_headimg.jpg{% else %}{{current_user.head}}{%endif%}" width="100%">
+        </div>
+        <div class="usermodule name">{{ current_user.username }}</div>
+        
+     <script type="text/javascript">
+             $(document).ready(function(){
+                    $("#usermodule-userhead").click(function(){
+                       $("#usermp").toggle();
+                    })    
+             });
+    </script>
+        
+    {% else %}
+
+    <a href="http://account.mahouo.com/sign-in">登陆</a>
+    {% endif %}
+
+    </div>

@@ -1,0 +1,34 @@
+{% include 'mobile/common-head.html' %}
+
+<link rel="stylesheet" type="text/css" href="http://mahdns-mahouomobile-1251754029.cosgz.myqcloud.com/css/index/index.css">
+<script type=text/javascript src="http://mahdns-cdn-1251754029.cosgz.myqcloud.com/v2.1.4/jquery.min.js"></script>
+
+{% include 'mobile/module/applist.html' %}
+
+<div id="header" class="m-wp">
+    <!--接入点-->
+    <div class="header-func l">{% include 'mobile/module/user.html' %}</div>
+    <div class="header-func r" id="openapplistbutton"><img src="http://ssl1.mahouo.com/image/module-usermodule/2/index-top-more_fun.png"></div>
+</div>
+
+<div id="logo" class="m-wp">
+    <img src="http://p61mle8tu.bkt.clouddn.com/20183220.png" width="100%" class="logo-img">
+</div>
+
+<div id="search" class="m-wp">
+    <form action="/search" name="input" method="get">
+            <button type="submit" id="sf-bn">
+                    <img src="http://ssl1.mahouo.com/image/mahouo/form-but.png" id="sbtico">
+            </button>
+                
+            <input id="sf-it" name="s" placeholder="" autocomplete="off" value="{{s}}" oninput="myFunction()">
+                
+            <input name='page' value="1" style="display: none;">
+            <input name='charted' value="off" style="display: none;">
+            <input name='cacheid' value="" style="display: none;">
+            <input name='otcon' value="{{otcon}}" style="display: none;">
+    </form>
+</div>
+
+<div id="footer">©2017 MAHOUO</div>
+{% include 'mobile/statistics-mob.html' %}

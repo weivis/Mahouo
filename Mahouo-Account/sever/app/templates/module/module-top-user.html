@@ -1,0 +1,101 @@
+<head> 
+<style>
+body{margin:0 auto;}
+#index-top_fun-module{width: 320px;height: 520px;background-color: #fff;margin:0 auto;}
+.index-top_header-fun-box:hover{background-color: #f9f9f9; box-shadow: 0 0 2px #c5c5c5;}
+.index-top_header-fun-box{width: 100px;height: 100px;float: left;margin-top: 25px;margin-left: 5px;overflow: hidden;position: relative;}
+.index-top_header-fun-box_img{margin: auto;width: 60px;height: 60px;margin-top: 3px;position: absolute;left: 0;right: 0;top: 7px;bottom: auto;}
+.index-top_header-fun-box_txt{text-align: center;font-family: Microsoft YaHei;font-size: 13px;color: #0976f1;position: absolute;left: 0;right: 0;bottom: 7px;top: auto;margin: auto;font-weight: initial;}
+</style>
+  <meta charset="utf-8" /> 
+  <link rel="stylesheet" type="text/css" href="https://mahdns-package-1251754029.cosgz.myqcloud.com/common-usermodule/module_top_user.css" /> 
+  <style>
+#index-top_fun-ico{margin-top: 18px;}
+#index-top_fun-div{}
+</style>
+ </head>
+   <!--用户名片--> 
+   <div id="index-top_user-div"> 
+    <div id="index-top_user-div-info-head">
+      {% if current_user.is_authenticated %} 
+     <img src="https://ssl1.mahouo.com/head/{% if current_user.head == None %}no_headimg.jpg{% else %}{{current_user.head}}{%endif%}" width="180px;" /> {% endif %} 
+    </div>
+    <div id="index-top_user-div-info-ur-io"> 
+     <span id="index-top_user-div-info-ur-io-ne">{{ current_user.username }}</span> 
+     <span id="index-top_user-div-info-ur-io-el">{{ current_user.user_email }}@mahouo.com</span> 
+     <div>
+      <a href="http://pro.mahouo.com/{{ current_user.id }}" target="_blank" class="index-top_user-div-info-ur-io-bt">敬请期待</a> 
+      <a href="http://account.mahouo.com/user" target="_blank" class="index-top_user-div-info-ur-io-bt">我的账户</a> 
+     </div> 
+     <a href="http://account.mahouo.com/sign-in/logout"> 
+      <div id="index-top_user-div-info-ur-io-bt-lo-out"> 
+       <img src="https://ssl1.mahouo.com/image/module-usermodule/2/logout.png" style="float:left;margin-right:5px;" />
+       <span>退出账户</span> 
+      </div> </a> 
+    </div> 
+   </div> 
+   <!--信息模块--> 
+   <div id="index-top_information-div" style="display: none;"> 
+    <div id="index-top_information-div_infowin"></div> 
+    <div id="index-top_information-div_close"> 
+     <div id="index-top_information-close-margin"> 
+      <img src="https://ssl1.mahouo.com/image/module-usermodule/2/index-top-close.png" style="margin-top: 6.5px;float: left;" /> 
+      <a id="index-top-info-close-txt">Close</a> 
+     </div> 
+    </div> 
+   </div>
+
+   <!--app列表--> 
+   <div id="index-top_fun-div" style="display:none">
+   	{% if current_user.is_authenticated %}
+    <a href="http://account.mahouo.com/user/" target="_blank">
+	<div class="index-top_header-fun-box">
+	<img src="https://ssl1.mahouo.com/appico/account.png" class="index-top_header-fun-box_img">
+	<div class="index-top_header-fun-box_txt">
+	<span class="a_list">My Account</span>
+	</div>
+	</div>
+    </a>
+	{% endif %}
+
+	<div id="get-list"></div>
+
+	<script type="text/javascript">
+			function app_list(data){
+			    $("#get-list").prepend('<a href="'+ data['url'] +'" target="_blank"><div class="index-top_header-fun-box"><img src="https://ssl1.mahouo.com/appico/'+ data['img'] +'" class="index-top_header-fun-box_img"><div class="index-top_header-fun-box_txt"><span class="a_list">'+ data['name'] +'</span></div></div></a>')
+    };
+			$(document).ready(function() {
+			    $.getJSON('https://api.mahouo.com/applist/',
+			    function(data, textStatus) {
+			        $.each((data),
+			        function(){
+			            app_list(this);
+			        });
+			    });
+			});
+  </script>
+  </div>
+
+   <!--功能模块--> 
+   <div id="module-top-user-mod"> 
+    <div id="index-top-search_picture-ico"> 
+     <a href="http://painting.mahouo.com" target="_blank" id="picture-search_web-href">图片</a> 
+    </div> 
+    <div id="index-top_fun-ico"> 
+     <img src="https://ssl1.mahouo.com/image/module-usermodule/2/index-top-more_fun.png" role="button" id="module-web_top-funwin" class="hvr-grow" /> 
+    </div> {% if current_user.is_authenticated %} 
+    <!--登录后--> 
+    <div> 
+     <img src="https://ssl1.mahouo.com/image/module-usermodule/2/index-top-mi.png" role="button" id="index-top-information_fun" class="hvr-grow" /> 
+    </div> 
+    <div id="index-top-user_head"> 
+     <img src="https://ssl1.mahouo.com/head/{% if current_user.head == None %}no_headimg.jpg{% else %}{{current_user.head}}{%endif%}" width="100%" id="index-top_head-ui" role="button" class="hvr-grow" /> 
+    </div> {% else %} 
+    <!--登录前--> 
+    <a href="http://account.mahouo.com/sign-in" target=""> 
+     <div id="index-top_login-ui"> 
+      <img src="https://ssl1.mahouo.com/image/module-usermodule/2/index-top-login_ico.png" id="index-top_login-ico" /> 
+      <span id="index-top-sing_in-txt">Sing in</span> 
+     </div> </a> {% endif %} 
+   </div>
+  <script src="https://mahdns-package-1251754029.cosgz.myqcloud.com/common-usermodule/module_top_user.js"></script>

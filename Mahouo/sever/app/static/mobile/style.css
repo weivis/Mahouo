@@ -1,0 +1,3 @@
+body{margin: 0 auto;overflow-x: hidden;}
+a{text-decoration:none;font-family: Microsoft YaHei;}
+.m-wp{width: calc(100% - 45px);margin: 0 auto;max-width: 600px;}

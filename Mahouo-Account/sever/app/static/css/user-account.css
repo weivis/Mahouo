@@ -1,0 +1,33 @@
+html {height:100%;position: relative;}
+a{text-decoration:none;}
+
+#header-logo{margin-top: 0px;}
+
+#page-my_account{width: 410px;float: left;margin-right: 50px;}
+#page-my_account_content-head{width: 145px;height: 145px;border-radius: 200px;overflow: hidden;position: absolute;margin-left: 35px;z-index: 0;}
+#page-my_account_content{margin-top: 72px;width: 100%;background-color: #fff;height: 390px;box-shadow: 0px 3px 5px #cecece;overflow: hidden}
+#page-my_account_headuploads{color: #000;float: left;margin-left: 220px;margin-top: 10px;font-size: 14px;color: #008aff;font-weight: bold;overflow: hidden}
+#page-my_account_userinfoset_tab{margin-top: 110px;}
+.page-my_account_userinfoset_tab_li{width: calc(100% - 60px);margin: auto;margin-bottom: 35px;}
+.page-my_account_userinfoset_tab_li-setname{width: 100%;font-size: 14px;color: #868686;}
+.page-my_account_userinfoset_tab_li-seta{float: right;font-size: 14px;color: #008aff;}
+.page-my_account_userinfoset_tab_li-info{width: 100%;font-size: 14px;color: #000;margin-top: 5px;}
+
+
+
+#page-my_sifu{margin-top: 72px; width: 410px;background-color: #fff;height: 390px;box-shadow: 0px 3px 5px #cecece;overflow: hidden;float: left;margin-right: 50px;}
+#page-my_sifu-wp{width: calc(100% - 60px);margin: auto}
+#page-my_sifu-modulename{width: 100%;margin-top: 20px;font-size: 14px;color: #5e5e5e}
+#page-my_sifu-sifutype{width: 100%;height: 135px;font-size: 36px;line-height: 135px;}
+.sifu-type-li{width: 100%;font-size: 14px;overflow: hidden;margin-bottom: 40px;}
+.sifu-type-li-title{float: left;color: #5e5e5e}
+.sifu-type-li-a{float: right;color: #008aff}
+
+
+
+#page-my_login-ip{margin-top: 72px; width: 410px;background-color: #fff;height: 390px;box-shadow: 0px 3px 5px #cecece;overflow: hidden;float: left;margin-right: 50px;}
+#page-my_login-ip-modename-wp{width: calc(100% - 60px);margin: auto;margin-top: 20px;}
+#page-my_login-ip-modename{font-size: 14px;color: #5e5e5e;margin-bottom: 25px;}
+#page-my_login-ip-modename_a{font-size: 14px;color: #008aff;float: right;}
+
+.page-my_login-ip_infoli{margin-bottom: 25px;width: 100%;font-size: 14px;color: #5e5e5e}

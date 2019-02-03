@@ -1,0 +1,113 @@
+<link rel="stylesheet" type="text/css" href="static/css/user-head.css">
+
+{% extends "user/frame.html" %}{% block content %}
+
+<div id="upload_tpye" style="display: none;">上传成功</div>
+
+<div id="page-headuploads">
+    
+    <span style="color: #6d6d6d; font-size: 14px;" id="imgtpye">当前头像</span>
+    
+    <div id="header-shso">
+        <div class="header-shon-li">
+        <div id="header-shon-px1">
+                <img id="head-px1" src="https://ssl1.mahouo.com/head/{% if current_user.head == None %}no_headimg.jpg{% else %}{{current_user.head}}{%endif%}" width="100%" class="header-shon-border">
+            </div>
+        </div>
+        <div class="header-shon-li">
+        <div id="header-shon-px2">
+            <img id="head-px2" src="https://ssl1.mahouo.com/head/{% if current_user.head == None %}no_headimg.jpg{% else %}{{current_user.head}}{%endif%}" width="100%" class="header-shon-border">
+            </div>
+        </div>
+        <div class="header-shon-li">
+        <div id="header-shon-px3">
+            <img id="head-px3" src="https://ssl1.mahouo.com/head/{% if current_user.head == None %}no_headimg.jpg{% else %}{{current_user.head}}{%endif%}" width="100%" class="header-shon-border">
+            </div>
+        </div>
+        <div class="header-shon-li">
+        <div id="header-shon-px4">
+            <img id="head-px4" src="https://ssl1.mahouo.com/head/{% if current_user.head == None %}no_headimg.jpg{% else %}{{current_user.head}}{%endif%}" width="100%" class="header-shon-border">
+            </div>
+        </div>
+    </div>
+    
+    <div style="width: calc(100% - 50px);height: 1px;background-color: #d8d8d8; margin-top: 20px;margin-bottom: 20px;"></div>
+    
+    <div id="userbutt">
+            <img id="preview" />
+
+            <form id="uploadForm" enctype=multipart/form-data>
+                <input name="key" type="hidden" value="" id="key">
+                <input name="token" type="hidden" value="" id="token">
+                <input name="file" type="file" id="file" />
+                <!--<input name="crc32" type="hidden" />-->
+                <input name="accept" type="hidden" />
+            </form>
+        <button type="button" id="upload" style="float:right;margin-right: 50px;">完成</button>
+
+            <script type="text/javascript">
+
+    $('#file').change(
+        function () {
+
+            if (typeof (FileReader) != "undefined") {
+                var image_holder = $("#viwe");
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                        $('#head-px1').attr('src',e.target.result)
+                        $('#head-px2').attr('src',e.target.result)
+                        $('#head-px3').attr('src',e.target.result)
+                        $('#head-px4').attr('src',e.target.result)
+                }
+                reader.readAsDataURL($(this)[0].files[0]);
+            } else {
+                alert("你的破浏览器不支持FileReader.");
+            }
+        });
+
+    //更改上传后获取上传文件的token
+    $('#uploadForm').change(
+        function () {
+            $.getJSON("/user/upload-token?filename=" + $("input[name='file']").prop('files')[0]['name'],
+                function (data, textStatus) {
+                $("#key").val(data['key']);
+                $("#token").val(data['covertoken']);
+                });
+        });
+
+    $('#upload').click(function () {
+            if ($("#file").val() == '') {
+                alert("请上传图片")
+                console.log("不存在封面")
+            } else {
+                $.ajax({
+                    url: 'https://up-z2.qiniup.com',
+                    type: 'POST',
+                    cache: false,
+                    data: new FormData($('#uploadForm')[0]),
+                    processData: false,
+                    contentType: false
+                }).done(function (res) {
+                    $.ajax({
+                        type: "post",
+                        dataType: 'json',
+                        contentType: "application/json; charset=utf-8",
+                        url: "release",
+                        cache: false,
+                        data: JSON.stringify({
+                            "key": $("#key").val(),
+                            "token": $("#token").val(),
+                        }),
+                        success: function (data) {
+                            alert(data['type'])
+                        }
+                    });
+                }).fail(function (res) {
+                    alert("上传失败")
+                });
+            };
+    })
+           </script>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'common-head.html' %}
+    <link rel="stylesheet" type="text/css" href="http://mahdns-weather-1251754029.cosgz.myqcloud.com/style.css">
+    <link rel="stylesheet" type="text/css" href="http://mahdns-weather-1251754029.cosgz.myqcloud.com/css/index.css">
+    <link rel="stylesheet" type="text/css" href="http://mahdns-weather-1251754029.cosgz.myqcloud.com/css/index-w-more.css">
+    <script type=text/javascript src="http://mahdns-cdn-1251754029.cosgz.myqcloud.com/v2.1.4/jquery.min.js"></script>
+</head>
+<div id="loadanimerpo">
+    <style>
+        #load-anime-po {
+            position: absolute;
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            border: 0;
+            background-color: #0b0d1d
+        }
+
+        body {
+            margin: auto
+        }
+
+        #load-anime-po_loadgif {
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        @-webkit-keyframes loadpopaanime
+        /* Safari 和 Chrome */
+
+            {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        body {
+            overflow: hidden
+        }
+
+        .load-pa-po {
+            -webkit-animation: loadpopaanime 1s;
+            animation-fill-mode: forwards;
+            /* Safari and Chrome */
+        }
+    </style>
+    <div id="load-anime-po" class="">
+        <img src="http://p6ykp0exp.bkt.clouddn.com/load.gif" id="load-anime-po_loadgif">
+    </div>
+    <script type=text/javascript>
+        function loginanimepofls() {
+            $("#load-anime-po").addClass("load-pa-po");
+            $("body").css("overflow", "visible");
+            $("#load-anime-po").css("height", "0px");
+        };
+    </script>
+</div>
+
+<div id="weather-more-por" style="position:  fixed;z-index: 999999;left: 0;height:100%;">
+    <style>
+        #weather-more-por {
+            display: none;
+        }
+    </style>
+    <div id="more-weather_powin">
+        <div class="more-weather_powin header">
+            <div id="weather-county">
+                <div class="weather-county a">中国</div>
+                <!--<div class="weather-county a">全球</div>-->
+            </div>
+            <div id="more-weather_powin-closs">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px">
+                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M19.995,19.375 L19.373,19.997 L9.998,10.623 L0.624,19.997 L0.002,19.375 L9.376,10.000 L0.002,0.626 L0.624,0.003 L9.998,9.378 L19.373,0.003 L19.995,0.626 L10.621,10.000 L19.995,19.375 Z"
+                    />
+                </svg>
+            </div>
+        </div>
+        <div class="more-weather_powin content">
+            <div id="left-citytab">
+                <!--<li class="left-citytab a">广东</li>-->
+            </div>
+            <div id="right-citycontent">
+                <!--<div class="right-citycontent a">广州</div>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<body>
+
+    <div id="header">
+
+        <div id="header-logo">
+            <img src="http://p6ykp0exp.bkt.clouddn.com/image/logo.png" class="header-logo ico">
+        </div>
+        <div id="header-nav">
+            <div id="moremap">查看其他地区</div>
+            <div id="usermap">
+                <div id="usermap-ico">
+                    <img src="http://p6ykp0exp.bkt.clouddn.com/image/mapico.png" style="position: absolute;top: 0;bottom: 0;left: 0;right: auto;margin: auto">
+                </div>
+                <div style="float: left;" id="api-gpsandusermap">定位中</div>
+                <span style="float: left" id="api-gpsbutt">&nbsp;</span>
+            </div>
+        </div>
+        <div id="user-module" style="overflow:  hidden;float:  right;margin-right:  25px;margin-top: 5px;">{% include 'module/module-top-user.html' %}</div>
+    </div>
+
+    <div id="content" class="content-wp">
+
+        <div id="data-li1" class="weather-datali" style="margin-bottom: 10px;">
+            <div id="richu" class="opy-1">
+                <span>
+                    <div style="float:left;">日出时间&nbsp;&nbsp;</div>
+                    <div id="api-sunrise" style="float:left;">未知</div>
+                </span>
+                <span>
+                    <div style="float:left;">&nbsp;&nbsp;-&nbsp;&nbsp;日落时间&nbsp;&nbsp;</div>
+                    <div id="api-sunset" style="float:left;">未知</div>
+                </span>
+            </div>
+        </div>
+
+        <div id="data-li2" class="weather-datali ">
+            <div id="wrather-info" class="opy-2">
+                <div class="wrather-info ico">
+                    <img src="" class="wrather-info ico-img" id="weather-ico" width="70%">
+                </div>
+
+                <div class="wrather-info info-fr">
+                    <div style="height: 140px;">
+                        <div style="float: left;width: 200px">
+                            <div>
+                                <div class="wrather-info konqizhiliang" id="api-aqi">空气质量&nbsp;70&nbsp;良</div>
+                            </div>
+                            <div>
+                                <div class="wrather-info wendu" id="api-wendu">没有数据</div>
+                            </div>
+                        </div>
+                        <div style="float: left;margin-top: 20px;width: 210px">
+                            <div class="wrather-info jinru-wendu" id="api-daywendu">没有数据</div>
+                            <div class="wrather-info date" id="api-date">没有数据</div>
+                            <div class="wrather-info city" id="api-city"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="wrather-info text" id="api-text">落屎</div>
+                    </div>
+                </div>
+
+                <div class="wrather-info info-list">
+                    <div class="wrather-info info-list_li" style="margin-top: 22px;">
+                        <div class="wrather-info info-list_li_l">风向</div>
+                        <div class="wrather-info info-list_li_r" id="api-wind_direction">未知</div>
+                    </div>
+                    <div class="wrather-info info-list_li">
+                        <div class="wrather-info info-list_li_l">风速</div>
+                        <div class="wrather-info info-list_li_r" id="api-wind_scale">未知</div>
+                    </div>
+                    <div class="wrather-info info-list_li">
+                        <div class="wrather-info info-list_li_l">风力大小</div>
+                        <div class="wrather-info info-list_li_r" id="api-wind_speed">未知</div>
+                    </div>
+                    <div class="wrather-info info-list_li">
+                        <div class="wrather-info info-list_li_l">能见度</div>
+                        <div class="wrather-info info-list_li_r" id="api-visibility">未知</div>
+                    </div>
+                    <div class="wrather-info info-list_li">
+                        <div class="wrather-info info-list_li_l">气压</div>
+                        <div class="wrather-info info-list_li_r" id="api-pressure">未知</div>
+                    </div>
+                </div>
+
+                <div class="wrather-info info-list">
+                    <div class="wrather-info info-list_li2" style="margin-top: 22px;">
+                        <div class="wrather-info info-list_li_l">PM2.5</div>
+                        <div class="wrather-info info-list_li_r" id="api-pm25">未知</div>
+                    </div>
+                    <div class="wrather-info info-list_li2">
+                        <div class="wrather-info info-list_li_l">PM1.0</div>
+                        <div class="wrather-info info-list_li_r" id="api-pm10">未知</div>
+                    </div>
+                    <div class="wrather-info info-list_li2">
+                        <div class="wrather-info info-list_li_l">二氧化硫指数</div>
+                        <div class="wrather-info info-list_li_r" id="api-so2">未知</div>
+                    </div>
+                    <div class="wrather-info info-list_li2">
+                        <div class="wrather-info info-list_li_l">二氧化碳指数</div>
+                        <div class="wrather-info info-list_li_r" id="api-no2">未知</div>
+                    </div>
+                    <div class="wrather-info info-list_li2">
+                        <div class="wrather-info info-list_li_l">一氧化碳指数</div>
+                        <div class="wrather-info info-list_li_r" id="api-co">未知</div>
+                    </div>
+                    <div class="wrather-info info-list_li2">
+                        <div class="wrather-info info-list_li_l">臭氧指数</div>
+                        <div class="wrather-info info-list_li_r" id="api-o3">未知</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="data-li_title">未来几天></div>
+
+        <div id="data-li3" class="weather-datali ">
+            <div id="today">
+                <div style="width: 1550px;" id="api-today">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="data-li_title">建议</div>
+
+        <div id="data-li4" class="weather-datali ">
+            <div class="jianyi">
+                <div class="jianyi a opy-2">
+                    <div class="jianyi title">穿衣</div>
+                    <div class="jianyi text" id="api-dressing">暂无数据</div>
+                </div>
+                <div class="jianyi a opy-2">
+                    <div class="jianyi title">无敌紫外线辐射</div>
+                    <div class="jianyi text" id="api-uv">暂无数据</div>
+                </div>
+                <div class="jianyi a opy-2">
+                    <div class="jianyi title">洗车信息(你又没车)</div>
+                    <div class="jianyi text" id="api-car_washing">暂无数据</div>
+                </div>
+                <div class="jianyi a opy-2">
+                    <div class="jianyi title">旅游信息(原来你还会出门啊)</div>
+                    <div class="jianyi text" id="api-travel">暂无数据</div>
+                </div>
+                <div class="jianyi a opy-2">
+                    <div class="jianyi title">流感信息(最后祝你身体健康 提xxx)</div>
+                    <div class="jianyi text" id="api-flu">暂无数据</div>
+                </div>
+                <div class="jianyi a opy-2">
+                    <div class="jianyi title">运动信息(落去玩跑步)</div>
+                    <div class="jianyi text" id="api-sport">暂无数据</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="page-background">
+        <div id="page-background_header-of_boxshon" style="background-image: url(http://p6ykp0exp.bkt.clouddn.com/image/header-sbox.png)"></div>
+        <img src="http://p6ykp0exp.bkt.clouddn.com/pic/background.jpg" width="auto" class="" style="min-height: 1080px;" id="api-background-pic">
+    </div>
+</body>
+
+</html>
+
+<script type="text/javascript" src="http://mahdns-weather-1251754029.cosgz.myqcloud.com/js/index2018514.js"></script>
+<script type=text/javascript>
+    var login_type = "1"
+    if (login_type == '') {
+        //alert('用户没登陆');
+    } else {
+        $.getJSON('http://weather.mahouo.com/api/user-map',
+            function (data, textStatus) {
+                //取出
+                cityid = data['mapid'];
+                mapname = data['mapname'];
+
+                //if data is None and nodata
+                if (cityid == '') {
+                    $.getJSON('https://api.mahouo.com/gps/',
+                        function (data, textStatus) {
+                            xinlanggps = data['city'];
+                            $("#api-gpsandusermap").text(xinlanggps);
+                            //$("#api-gpsbutt").text("\v-\v如自动定位不准确点此手动设置(非常抱歉功能尚未完成)");
+                            $.getJSON('http://weather.mahouo.com/api/city-id=' + xinlanggps,
+                                function (data, textStatus) {
+                                    getweatherdata(data);
+                                });
+                        });
+                } else {
+                    //alert('usermap user');
+                    $("#api-gpsandusermap").text(mapname + "(当前为用户设置地址)");
+                    //$("#api-gpsbutt").text("\v-\v重设地址(非常抱歉功能尚未完成)");
+                    getweatherdata(cityid);
+                };
+            });
+    };
+</script>
+
+<script type=text/javascript></script>
+
+<div style="display: none;">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?a5ea52e56029a7e21625f2eba6a46981";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</div>

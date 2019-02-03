@@ -1,0 +1,70 @@
+<link rel="stylesheet" type="text/css" href="static/css/user-infoset.css">
+{% extends "user/frame.html" %}{% block content %}
+
+<div id="userhead">
+    <div id="userhead-img"><img src="https://ssl1.mahouo.com/head/{% if current_user.head == None %}no_headimg.jpg{% else %}{{current_user.head}}{%endif%}" width="100%"></div>
+    <a href="/user/upload-head" style="font-size: 14px;color: #008aff;">更换图片</a>
+</div>
+<div id="userinfoset">
+
+    <div id="set-username">
+        <div id="set-username-info">{{ current_user.username }}</div>
+        <div id="set-username-setbutt">编辑用户名</div>
+        <div class="setinput"></div>
+    </div>
+    
+    <div style="color: #000;font-size: 18px;font-weight: lighter;margin-top: 30px;margin-bottom: 30px;">{{ current_user.user_email }}@mahouo.com</div>
+    
+    <div id="set-brday" class="setlist-li">
+        <div class="set-li">
+            <div class="set-li-l" id="api-birthday-shon">{% if current_user.birthday == None %}未知{% else %}{{ current_user.birthday }}{% endif %}</div>
+            <div class="set-li-r-butt" id="api-birthday-open">编辑出生日期</div>
+        </div>
+        <div class="set-li-input" style="display: none;" id="api-birthday-module">
+            <input type="date" class="brday-input-css" id="api-birthday-input">
+            <div class="li-input-no" id="api-birthday-close">取消</div>
+            <div class="li-input-ok" id="api-birthday-post">确定</div>
+        </div>
+    </div>
+    
+    <div id="set-brday" class="setlist-li">
+        <div class="set-li">
+            <div class="set-li-l" id="api-gender-shon">{% if current_user.gender == None %}未知{% else %}{{ current_user.gender }}{% endif %}</div>
+            <div class="set-li-r-butt" id="api-gender-open">编辑性别</div>
+        </div>
+        <div class="set-li-input"  style="display: none;" id="api-gender-module">
+            <select class="gre-input-css" id="api-gender-input">
+                <option>未知</option>
+                <option>男</option>
+                <option>女</option>
+                <option>秀吉</option>
+            </select>
+            <div class="li-input-no" id="api-gender-close">取消</div>
+            <div class="li-input-ok" id="api-gender-post">确定</div>
+        </div>
+    </div>
+    
+    <div id="set-brday" class="setlist-li">
+        <div class="set-li">
+            <div class="set-li-l">{% if current_user.region == None %}未知{% else %}{{ current_user.region }}{% endif %}</div>
+            <div class="set-li-r-butt" id="api-region-open">编辑国家/地区</div>
+        </div>
+        <div class="set-li-input"  style="display: none;" id="api-region-module">
+            <select class="gre-input-css" id="api-region-input">
+                <option>未知</option>
+                <option>中国</option>
+                <option>中国(台湾省)</option>
+                <option>中国(香港省)</option>
+                <option>中国(冲绳(琉球)省)</option>
+                <option>中国(大韩(韩国)自治区)</option>
+                <option>中国(日本自治区)</option>
+                <option>中国(朝鲜自治区)</option>
+            </select>
+            <div class="li-input-no" id="api-region-close">取消</div>
+            <div class="li-input-ok" id="api-region-post">确定</div>
+        </div>
+    </div>
+</div>
+<script type=text/javascript src="static/js/userinfoset.js"></script>
+
+{% endblock %}

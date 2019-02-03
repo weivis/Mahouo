@@ -1,0 +1,37 @@
+li{list-style:none;}
+
+#more-weather_powin{overflow:  hidden;height: 100%;padding-right: 25px;}
+
+.more-weather_powin.header{width: 100%;padding: 15px;height: 3.5%;background-color: #0a1525;}
+.more-weather_powin.content{background-color: #152235;padding: 15px;height: 91%;width: 100%;}
+
+.weather-county.a{padding-left: 25px;padding-right: 25px;height: 35px;border-radius: 3px;background-color: #102543;line-height: 35px;font-size: 14px;color: #fff;float: left;margin-right: 15px;cursor: default;}
+
+#left-citytab{float: left;overflow-y: auto;height: 100%;width: 100px;overflow-x: hidden;border-right: 1px solid #2f415b;}
+.left-citytab.a{width: 82%;color: #fff;font-size:  14px;text-align: center;margin-bottom: 13px;border-radius: 3px;cursor: default;}
+.left-citytab.a:hover{background-color: #103367}
+
+#right-citycontent{float: left;height: 100%;margin-left: 15px;width: 380px;overflow-y: auto;overflow-x: hidden;}
+
+.right-citycontent.a{line-height: 30px;float: left;color: #fff;margin-bottom: 15px;height: 30px;/* width: 100px; */padding-left: 15px;padding-right: 15px;margin-right: 15px;border: 1px solid #344d72;text-align: center;border-radius: 5px;cursor: default;font-size: 14px;}
+.right-citycontent.a:hover{background-color: #000;}
+
+#more-weather_powin-closs{float: right;margin-top: 7px;margin-right: 5px}
+
+#left-citytab::-webkit-scrollbar {
+        background-color: #00000000;
+        width:  5px;
+      }
+#left-citytab::-webkit-scrollbar-thumb {
+        border-radius: 50px;
+        background-color:#fff;
+      }
+
+#right-citycontent::-webkit-scrollbar {
+        background-color: #00000000;
+        width:  5px;
+      }
+#right-citycontent::-webkit-scrollbar-thumb {
+        border-radius: 50px;
+        background-color:#fff;
+      }

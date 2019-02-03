@@ -1,0 +1,15 @@
+<div id="user-module">
+    {% if current_user.is_authenticated %} 
+        <div id="user-moudle-head">
+            {% if current_user.is_authenticated %} 
+                <img src="https://ssl1.mahouo.com/head/{% if current_user.head == None %}no_headimg.jpg{% else %}{{current_user.head}}{%endif%}" width="100%">
+            {% endif %}
+        </div>
+        <div id="user-moudle-username">{{ current_user.username }}</div>
+    {% else %}
+    <a href="http://account.mahouo.com/sign-in" target="" style="float: right;color: #fff;font-size: 14px;line-height: 38px;">登录帐户</a>
+    {% endif %}
+    <style>
+        #user-moudle-head{width: 38px;height: 38px;float: right;border-radius: 100px;overflow: hidden;}#user-moudle-username{float: right;font-size: 14px;line-height: 38px;color: #fff;margin-right: 10px;}
+    </style>
+</div>

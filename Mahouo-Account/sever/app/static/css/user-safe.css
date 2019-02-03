@@ -1,0 +1,10 @@
+.page-safe-wp{width: 100%;}
+.safe-libox{height: 100px;background-color: #fff;box-shadow: 0 3px 5px #cecece;width: calc(100% - 40px);float: left;margin-right: 50px;max-width: 400px;padding-left: 20px;padding-right: 20px;padding-top: 20px;margin-bottom: 30px;}
+.colortype-ok{float: left;margin-left: 10px;}
+.safe-libox_name{font-size: 14px;overflow: hidden;margin-bottom: 20px;}
+.safe-libox_name-title{float: left;color: #6d6d6d}
+.safe-content{color: #6d6d6d;width: 100%;font-size: 14px;}
+
+.safe-mibao{height: 70px;width: calc(100% - 40px);padding-left: 20px;padding-right: 20px;background-color: #fff;box-shadow: 0 3px 5px #cecece;line-height: 70px;font-size: 14px;}
+
+.safe-set{float: right;color: #008aff}

@@ -1,0 +1,11 @@
+html{height:100%;position: relative;}
+a{text-decoration:none;}
+
+#login-log{overflow: hidden}
+#list-title{color: #008aff;font-size: 14px;}
+#list-data{font-size: 14px;color: #3e3e3e;margin-top: 20px;}
+
+li{list-style-type: none;width: 100%;float:  left;}
+.data-li{float: left;}
+.data-wp-120{width: 120px;}
+.data-wp-150{width: 150px;}

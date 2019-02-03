@@ -1,0 +1,288 @@
+<head>
+
+        <!--<script type=text/javascript src="static/js/sp.js"></script>-->
+        <script type="text/javascript">
+            if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                window.location.href = "http://m.mahouo.com/";
+            };
+        </script>
+
+<style>
+		#ou-ip-et_if-tab{min-height: calc(100% - 350px) !important;}/**margin-bottom: 100px**/
+        .authcom-a {    margin-bottom: 15px;}
+        .authcom_com.cover-back{width: 60% !important}
+        #ou-ip-et_ix{padding-right: 50px;}
+        .wp-r-put{max-width: 400px;margin-bottom: 60px;box-shadow: 0px 5px 5px #0000001f;}
+        .footer-left-aher{float: left;}
+        #out-ip-et{min-height: calc(100% - 220px);margin-bottom: 50px}
+</style>
+    {% include 'common-head.html' %}
+
+    <!--<link rel="stylesheet" type="text/css" href="static/css/index2018312.css">-->
+    <link rel="stylesheet" type="text/css" href="https://mahdns-mahouo-1251754029.cosgz.myqcloud.com/css/index2018312.css">
+    <link rel="stylesheet" type="text/css" href="https://mahdns-mahouo-1251754029.cosgz.myqcloud.com/css/ls2018312.css">
+    <script type=text/javascript src="https://mahdns-cdn-1251754029.cosgz.myqcloud.com/v2.1.4/jquery.min.js"></script>
+    <style>#lg-ct {border-radius: 10px;}#sf-min-logo{left: 5px;}
+            @media screen and (max-width: 1325px){
+                #ou-ip-et_if-tab {
+                    margin-left: 0px;
+                    padding-left: 20px;
+                    width: 350px;
+                }
+                #ou-ip-et_ix {
+                    min-width: 650px;
+                }
+            }
+    </style>
+
+    {% if newpage %}
+    <script type="text/javascript">
+        if("{{s}}"){
+            //alert("有搜索内容");
+            if('{{s}}'=='{{otcon}}'){
+                //alert('搜索内容重复-判断页数是否重复');
+                if('spage'=='page'){
+                    alert("页数重复-搜索内容重复 不执行");
+                }else{
+                    //alert("搜索内容重复-页数不重复 执行");
+                    get_datatype();
+                }
+            }else{
+                //alert('搜索内容不重复 直接执行');
+                get_datatype();
+            };
+        }else{
+            //alert("没有搜索内容");
+        };
+
+        function people_out(data) {
+            $("#people").prepend('<div id="people"><div class="wp-r-put"><div class="people_cover"><img src="https://ssl2.mahouo.com/' + data['cover'] + '" width="100%"></div><div class="people_title div"><div class="people_title pot"><span class="people_title name">' + data['name'] + '</span><br><span class="people_title info">'+ data['info'] +'</span></div></div></div></div>')
+        };
+
+        function company_out(data) {
+            $("#company-api").prepend('<div id="company"><div class="wp-r-put"><div class="company cover"><img src="https://ssl2.mahouo.com/'+ data['cover'] +'" width="100%"></div><div class="company title"><div class="company-title name"><span>'+ data['name'] +'</span></div><div class="company-title info"><span>'+ data['info'] +'</span></div></div></div></div>')
+        };
+
+        function company_people_more(data) {
+            $("#company-people").prepend('<div class="people-list people"><div class="people-list people_head"><img src="https://ssl2.mahouo.com/'+ data['cover'] +'" width="100%" height="auto"></div><div class="people-list people_title"><span>'+ data['name'] +'</span></div><div class="people-list people_info"><span>' + '</span></div></div>')
+        };
+
+        function people_more(data) {
+            $("#people-api").prepend('<div class="people-list people"><a href="https://www.mahouo.com/search?s='+ data['name'] +'"><div class="people-list people_head"><img src="https://ssl2.mahouo.com/'+ data['cover'] +'" width="100%" height="auto"></div><div class="people-list people_title"><span>'+ data['name'] +'</span></div><div class="people-list people_info"><span>' + '</span></div></a></div>')
+        };
+
+        function authcom_out(data) {
+            $("#authcom-api").prepend('<a href="'+ data['url'] +'" target="_blank"><div class="authcom-a"><div class="authcom_com title"><div class="authcom_com title_rightbox"><div class="authcom_title name">'+ data['title'] +'</div><div class="authcom_title info">' + data['info'] + '</div></div></div><div class="authcom_com cover"><div class="authcom_com cover-back"></div><img src="https://ssl2.mahouo.com/'+ data['cover'] +'" height="100%"></div></div></a>')
+        };
+
+        function get_datatype(searchcontent_type) {
+            var moveurl = 'https://www.mahouo.com/api/get-more/{{s}}';//http://library.mahouo.com/get-more/{{s}}
+            $.getJSON(moveurl,
+                function (data, textStatus) {
+                    
+                    if(data.people == ''){
+                        //alert('人返回数据为空');
+                        $("#people_more").css("display","none");
+                    }else{
+                        $("#people_more").css("display","block");
+                        peopledata = data['people'][0]['time'];
+                        //alert(peopledata.name);
+                        people_out(peopledata)
+                        people_moredata = data['people'][0]['more'];
+                        people_moredata.forEach((item, index) => {
+                            //console.log(item._source);
+                            people_more(item._source);
+                            //alert(item._source['title']);
+                        });
+                    };
+
+                    if(data.company == ''){
+                        //alert('公司或组织返回数据为空');
+                    }else{
+                        companydata = data['company'][0]['time'];
+                        company_out(companydata)
+                        //company_people_data = data['company'][0]['company_people'];
+                        //company_people_data.forEach((item, index) => {
+                            //console.log(item._source);
+                        //    company_people_more(item._source);
+                            //authcom_out(item._source);
+                        //});
+                    };
+
+                    if(data.authcom == ''){
+                        //alert('不存在相关认证网站')
+                        $("#authcom").css("display","none");
+                    }else{
+                        $("#authcom").css("display","block");
+                        authcomdata = data['authcom'][0]['time'];
+                        authcomdata.forEach((item, index) => {
+                            //console.log(item._source);
+                            authcom_out(item._source);
+                            //alert(item._source['title']);
+                        });
+                    };
+
+                    if(data.people + data.company + data.authcom == ''){
+                        $("#ou-ip-et_if-tab").css("display","none");
+                    }else{
+                        $("#ou-ip-et_if-tab").css("display","block");
+                    };
+            });
+        };
+
+    </script>
+    {% endif %}
+
+</head>
+<!--头部-->
+<header>
+    <!--用户模块-->
+    <div id="user-module" style="margin-right: 15px;
+    margin-top: 5px;">{% include 'module/module-top-user.html' %}</div>
+
+    <div id="sh">
+
+        <!--页面logo-->
+        <div id="lg">
+            <!--<a href="https://www.bilibili.com/bangumi/media/md8932" target="_blank">
+                <img src="https://ssl1.mahouo.com/image/logo/index/20150514.png" id="lg-ct" width="100%">
+            </a>-->
+            <img src="https://ssl1.mahouo.com/image/logo/index/2017-6-7.png" id="lg-ct" width="100%">
+        </div>
+
+        <!--搜索logo-->
+        <div id="sf-logo">
+            <a>
+                <img src="https://ssl1.mahouo.com/image/logo/search-top-head/2018322-2.png" id="sf-min-logo" width="87%">
+            </a>
+        </div>
+
+        <!--搜索框-->
+        <div id="sf">
+            <script type="text/javascript">
+                $(document).ready(function(){
+                  $("sf-it").submit(function(e){
+                    alert("Submitted");
+                  });
+                  $("sf-bn").click(function(){
+                    $("form").submit();
+                  });  
+                });
+        </script>
+
+            <form action="/search" name="input" method="get">
+                <button type="submit" id="sf-bn"><!--onclick="get_datatype()"-->
+                    <img src="https://ssl1.mahouo.com/image/mahouo/form-but.png">
+                </button>
+                <input id="sf-it" name="s" placeholder="" autocomplete="off" value="{{s}}" oninput="myFunction()">
+                <input name='page' value="1" style="display: none;">
+                <input name='charted' value="off" style="display: none;">
+                <input name='otcon' value="{{otcon}}" style="display: none;">
+                <input name='cacheid' value="" style="display: none;">
+            </form>
+        </div>
+    </div>
+
+    <div id="header-sh-bk"></div>
+
+</header>
+<!--头部-->
+
+<!--搜索结果整体框架-->
+<div id="cent">
+
+    <!--搜索内容选择-->
+    <div id="searh-mu">
+        <div id="sh-mu-w">
+            {% include 'search-nav.html' %}
+        </div>
+    </div>
+
+
+    <!--搜索结果-->
+    <div id="out-ip-et">
+
+        <div id="ou-ip-et_ix">
+
+            <div id="search_data_pcs">一共找到{{ total_nums }}条相关数据 用时{{end_time}}</div>
+
+            <!--子域名模块-->
+            {% include 'package/getlist-soninex.html' %}
+            
+            <!--结果列表-->
+            {% include 'package/getlist-searchout.html' %}
+
+            <!--分页跳转模块-->
+            <div id="search_tab_modu" style="float: left;margin-top: 10px;">
+                    {% include 'package/input-pageurl.html' %}
+            </div>
+
+        </div>
+
+        <div id="ou-ip-et_if-tab">
+            {% include 'package/input-more.html' %}
+        </div>
+    </div>
+    <!--搜索结果-->
+
+    <!--页尾-->
+    <div id="footer-min">
+
+        <div id="fotter-min-left">
+            <a class="footer-left-aher" href="http://policies.mahouo.com/" target="_blank">
+                <span>Mahou</span>
+            </a>
+
+
+            <!--icp备案号-->
+            <a class="footer-left-aher" href="http://policies.mahouo.com/" target="_blank">
+                <span>粤ICP备18033082号-1</span>
+            </a>
+
+            
+            <a class="footer-left-aher" href="http://analytics.mahouo.com/submit" id="submit-pageurl" style="display: none;" target="_blank">
+                <span>提交网站给我们</span>
+            </a>
+            
+        </div>
+
+        <div id="fotter-min-right">
+            <a class="footer-right-aher" target="_blank" href="http://shenvi.mahouo.com/">
+                <span>© 2017 Mahou</span>
+            </a>
+            <a class="footer-right-aher" target="_blank" href="http://policies.mahouo.com/">
+                <span>使用条款</span>
+            </a>
+            <a class="footer-right-aher" target="_blank" href="http://policies.mahouo.com/">
+                <span>隐私</span>
+            </a>
+            <a class="footer-right-aher" target="_blank" href="http://shenvi.mahouo.com/">
+                <span>与我们联系</span>
+            </a>
+        </div>
+
+        <!--页面数量{{page_nums}}第{{page}}页-->
+    </div>
+    <!--页尾-->
+
+</div>
+
+<div id="html5video-background">
+
+        <style>
+            #html5video-background{width: 100%;overflow: hidden;position: absolute;z-index: -10;padding: 0;margin: 0;
+            top: 0;left: 0;right: 0;height: 100%;}
+        </style>
+    
+    <!--
+    <video id="background-video" width="100%" autoplay="autoplay" loop="loop">
+            <source src="/static/2018218.mp4" type="video/mp4">
+    </video>
+    </div>
+    -->
+
+</div>
+<!--<script type="text/javascript" src="static/js/index.js"></script>-->
+<script type="text/javascript" src="https://mahdns-mahouo-1251754029.cosgz.myqcloud.com/js/index20180605.js"></script>
+
+{% include 'statistics.html' %}

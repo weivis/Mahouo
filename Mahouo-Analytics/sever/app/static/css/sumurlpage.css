@@ -1,0 +1,7 @@
+#sumurlpage{width: 670px;height: 450px;margin: 0 auto;box-shadow: 0px 4px 9px #0000003d;padding-left: 50px;padding-right: 50px;padding-top: 50px;position: relative;margin-top: 50px;}
+.sumurlpage.title{font-size: 24px;}
+.sumurlpage.title-14{font-size: 14px;margin-top: 5px;}
+
+#sumurlpage-input{width: 100%;border: 0;border-bottom: 1px solid #808080;height: 40px;margin-top: 100px;outline:none;}
+#sumurlpage-butt{width: 100px;background-color: #0078ff;height: 35px;border-radius: 3px;color: #fff;text-align: center;line-height: 35px;margin-top: 20px;}
+#sumurlpage-butt:hover{background-color: #2f00ff}

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<head>
+    <link rel="stylesheet" type="text/css" href="static/css/frame.css">
+    <script type=text/javascript src="https://mahdns-cdn-1251754029.cosgz.myqcloud.com/v2.1.4/jquery.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+    <title>我的账户 - {{title}} Mahouo Account</title>
+    {% else %}
+    <title>我的账户 - Mahouo Account</title>
+    {% endif %}
+</head>
+
+<div id="user-module" style="right:  25px;top: 5px;z-index: 99999999999999;position:  fixed;">{% include 'module/module-top-user.html' %}</div>
+
+<div id="header" style="z-index: 0;">
+    <div id="header-l-f">
+        <div id="header-logo">
+            <img src="static/img/uclogo.png" style="display: inline-block; vertical-align: middle;">
+        </div>
+        <div id="header-logo-td"></div>
+        <span id="header-logo-name">My-Account</span>
+    </div>
+    <div id="header-r-f">
+    </div>
+</div>
+
+<div id="page-header" style="z-index: 1;">欢迎你 {{current_user.username}}</div>
+
+<div id="left-nav">
+    <a href="/user/" class="left-nav-li">我的账户></a>
+    <a href="/user/upload-head" class="left-nav-li">头像</a>
+    <a href="/user/profile" class="left-nav-li">个人资料</a>
+    <a href="/user/security" class="left-nav-li">安全</a>
+    <a href="/user/activity" class="left-nav-li">登陆记录</a>
+</div>
+
+<div id="right-content">{% block content %}{% endblock %}</div>
+</div>
+{% include 'statistics.html' %}

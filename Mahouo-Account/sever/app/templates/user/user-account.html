@@ -1,0 +1,86 @@
+{% extends "user/frame.html" %}{% block content %}
+<link rel="stylesheet" type="text/css" href="static/css/user-account.css">
+<div id="page-my_account">
+    <div id="page-my_account_content-head"><img src="https://ssl1.mahouo.com/head/{% if current_user.head == None %}no_headimg.jpg{% else %}{{current_user.head}}{%endif%}" width="100%"></div><!--
+http://p5hcx1fzy.bkt.clouddn.com/{% if current_user.head == None %}no_headimg.jpg{% else %}{{current_user.head}}{%endif%}
+-->
+    <div id="page-my_account_content">
+    <a href="/user/upload-head" id="page-my_account_headuploads">更换图片</a>
+    <div id="page-my_account_userinfoset_tab">
+        <div class="page-my_account_userinfoset_tab_li">
+            <div class="page-my_account_userinfoset_tab_li-setname">
+                用户名
+                <a href="" class="page-my_account_userinfoset_tab_li-seta">修改用户名</a>
+            </div>
+            <div class="page-my_account_userinfoset_tab_li-info">{{current_user.username}}</div>
+        </div>
+        <div class="page-my_account_userinfoset_tab_li">
+            <div class="page-my_account_userinfoset_tab_li-setname">
+                邮箱
+            </div>
+            <div class="page-my_account_userinfoset_tab_li-info">{{current_user.user_email}}@mahouo.com</div>
+        </div>
+        <div class="page-my_account_userinfoset_tab_li">
+            <div class="page-my_account_userinfoset_tab_li-setname">
+                注册手机
+            <a id="phone-shon" class="page-my_account_userinfoset_tab_li-seta" style="cursor: pointer">显示</a>
+            </div>
+            <div class="page-my_account_userinfoset_tab_li-info" id="accountpage-user-phone" style="display: none">{{userphone}}</div>
+            <script type="text/javascript">
+                $("#phone-shon").click(function(){
+                    $("#accountpage-user-phone").toggle();
+                  });
+            </script>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+<div id="page-my_sifu">
+    <div id="page-my_sifu-wp">
+        <div id="page-my_sifu-modulename">账户安全</div>
+        <div id="page-my_sifu-sifutype">
+            状态 {% if usersafe.level == 0 %}
+            <span style="color: #f00">危险</span>
+            {% elif usersafe.level == 1 %}
+            <span style="color: #f00">低</span>
+            {% elif usersafe.level == 2 %}
+            <span style="color: rgb(0, 89, 255)">一般</span>
+            {% elif usersafe.level == 3 %}
+            <span style="color: rgb(0, 168, 65)">安全</span>
+            {% endif %}
+        </div>
+        <div class="sifu-type-li">
+            <div class="sifu-type-li-title">邮箱认证</div><a href="/user/security" class="sifu-type-li-a">{% if usersafe.email == 'True' %}已验证{% else %}立刻前往认证邮箱 以便使用更多功能{% endif %}</a>
+        </div>
+        <div class="sifu-type-li">
+            <div class="sifu-type-li-title">手机认证</div><a href="/user/security" class="sifu-type-li-a">{% if usersafe.phone == 'True' %}已验证{% else %}建议验证手机号 提升账号安全{% endif %}</a>
+        </div>
+        <div class="sifu-type-li">
+            <div class="sifu-type-li-title">密保问题</div><a href="/user/security" class="sifu-type-li-a">{% if usersafe.security == 'True' %}已设置{% else %}为了安全起见 建议用户设置密保问题{% endif %}</a>
+        </div>
+    </div>
+</div>
+
+
+<div id="page-my_login-ip">
+    <div id="page-my_login-ip-modename-wp">
+        <div id="page-my_login-ip-modename"><span id="page-my_login-ip-modename_name">最近登陆记录</span><a href="/user/activity" id="page-my_login-ip-modename_a">查看更多</a></div>
+        
+        {% for i in loginlog %}
+            <div class="page-my_login-ip_infoli">
+                <span>{{i.date}} {{i.time}} - IP : {{i.ip}}</span><br>
+                <span>{{i.region}}</span>
+            </div>
+        {% endfor %}
+
+        <!--
+        <div class="page-my_login-ip_infoli">
+            <span>2018-4-16 14:16 - IP : 127.0.0.1</span><br>
+            <span>我电脑省 我电脑市 我电脑区</span>
+        </div>
+        -->
+    </div>
+</div>
+{% endblock %}
