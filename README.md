@@ -54,7 +54,7 @@
 #### 账户界面
 ![Image text](https://github.com/ShenVi/Mahouo/blob/master/img/account.jpg)
 #### 登录界面
-![Image text](https://github.com/ShenVi/Mahouo/blob/master/img/login.png)
+![Image text](https://github.com/ShenVi/Mahouo/blob/master/img/login.jpg)
 #### 登录功能
 ![Image text](https://github.com/ShenVi/Mahouo/blob/master/img/logintype1.jpg)
 ![Image text](https://github.com/ShenVi/Mahouo/blob/master/img/logintype2.jpg)
