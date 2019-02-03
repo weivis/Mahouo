@@ -1,5 +1,3 @@
-*.html linguist-language=Python
-*.css linguist-language=Python
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
